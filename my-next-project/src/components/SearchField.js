@@ -1,3 +1,6 @@
+// We implemented to the parent --> Heading.js 
+
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -44,6 +47,11 @@ export default function AutoComplete(props) {
       )}
     />
     </div>
+        <div>
+        <button onClick={()=>{console.log("submit is working")}}>
+          Submit
+        </button>
+        </div>    
     </>
   );
 }
