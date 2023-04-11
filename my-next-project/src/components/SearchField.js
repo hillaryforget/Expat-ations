@@ -22,7 +22,7 @@ export default function AutoComplete(props) {
       sx={{ width: 300 }}
       options={countries}
       autoHighlight
-      getOptionLabel={(option) => option.label}
+      getOptionLabel={(option) => option.labelgit }
       renderOption={(props, option) => (
         <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
           <img

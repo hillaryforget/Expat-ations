@@ -8,10 +8,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 export default function Heading() {
   const [country, SetCountry] = useState(''); 
 
-  // const countryUpdate = (selectedCountry) => {
-  //   SetCountry(selectedCountry);
-  // }
-
+  const countryUpdate = (selectedCountry) => {
+    SetCountry(selectedCountry);
+  }
 
   return (
     <>
@@ -45,19 +44,20 @@ export default function Heading() {
           label="Choose a country"
           inputProps={{
             ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
+            autoComplete: 'new-password', // disable autocomplete and autofill, 
+            
           }}
         />
       )}
     />
-    </div>
-      </div>
     </div>
         <div>
         <button onClick={()=>{console.log("submit is working")}}>
           Submit
         </button>
         </div>
+      </div>
+    </div>
     </>
   );
 }
