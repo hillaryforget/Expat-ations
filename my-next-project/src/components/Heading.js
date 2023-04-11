@@ -1,6 +1,7 @@
 import AutoComplete from "./SearchField";
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 function showState(propOne, propTwo) {
   console.log(propOne);
@@ -10,6 +11,14 @@ function showState(propOne, propTwo) {
 export default function Heading({ cities }) {
   const [country_one, SetCountryOne] = useState('');
   const [country_two, SetCountryTwo] = useState('');
+
+  const router = useRouter()
+  const navigate = () => {
+    if (!country_one || !country_two) return; 
+     
+    router.push({pathname: "/main", query: {city1: country_one, city2: country_two}})
+  }
+
 
   return (
     <>
@@ -21,10 +30,13 @@ export default function Heading({ cities }) {
           <AutoComplete stateChanger={SetCountryOne} city_list={cities} />
           <AutoComplete stateChanger={SetCountryTwo} city_list={cities}/>
           <Link href={{pathname: '/main'}}>
-            <button onClick={()=>{showState(country_one, country_two)}}>
+            link is here
+          </Link>
+          
+            <button onClick={navigate}>
               Submit
             </button>
-          </Link>
+          
         </div>
       </div>
     </>
