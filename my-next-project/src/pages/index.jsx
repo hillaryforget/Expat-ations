@@ -2,17 +2,20 @@ import Head from "next/head";
 import Heading from "../components/Heading";
 
 export async function getStaticProps() {
+  const cities = [];
   const res = await fetch('https://api.teleport.org/api/urban_areas/');
   const data = await res.json();
 
+  data._links['ua:item'].forEach(city => cities.push(city.name));
+
   return {
     props: {
-      data
+      city_list: cities
     },
   }
 }
 
-export default function Home({ data }) {
+export default function Home({ city_list }) {
   return (
     <>
       <Head>
@@ -22,10 +25,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <Heading data={data}/>
-      <button onClick={()=>{showState(country_one, country_two)}}>
-          Submit
-      </button>
+      <Heading cities={city_list}/>
     </>
   );
 }
