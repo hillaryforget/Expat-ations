@@ -3,7 +3,14 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-export default function AutoComplete() {
+
+export default function AutoComplete(props) {
+
+  const sendDataToParent = () => {
+    const data = 'Data from Searchfield'
+    props.onDataUpdate(data)
+  }
+
   return (
     <>
     <div className='bg-white'> 
@@ -37,16 +44,7 @@ export default function AutoComplete() {
       )}
     />
     </div>
-
-    <div>
-      <button>
-        Submit
-      </button>
-    </div>
-
     </>
-
-    
   );
 }
 
