@@ -5,6 +5,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function AutoComplete() {
   return (
+    <>
     <div className='bg-white'> 
     <Autocomplete
       id="country-select-demo"
@@ -36,6 +37,16 @@ export default function AutoComplete() {
       )}
     />
     </div>
+
+    <div>
+      <button>
+        Submit
+      </button>
+    </div>
+
+    </>
+
+    
   );
 }
 
