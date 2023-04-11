@@ -1,5 +1,6 @@
 import AutoComplete from "./SearchField";
 import { useState } from 'react';
+import Link from 'next/link';
 
 function showState(propOne, propTwo) {
   console.log(propOne);
@@ -19,9 +20,11 @@ export default function Heading({ cities }) {
           <p className="py-5 text-xl">What's your destination?</p>
           <AutoComplete stateChanger={SetCountryOne} city_list={cities} />
           <AutoComplete stateChanger={SetCountryTwo} city_list={cities}/>
-          <button onClick={()=>{showState(country_one, country_two)}}>
-            Submit
-          </button>
+          <Link href={{pathname: '/main'}}>
+            <button onClick={()=>{showState(country_one, country_two)}}>
+              Submit
+            </button>
+          </Link>
         </div>
       </div>
     </>
