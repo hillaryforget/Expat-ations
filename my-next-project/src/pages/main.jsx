@@ -5,16 +5,37 @@ import Head from "next/head";
 import SearchField from "../components/SearchField";
 import { useRouter } from 'next/router' 
 import { useEffect, useState } from "react";
-import Loading from "../components/loading";
+import Loading from "../components/Loading";
 
+export async function getServerSideProps(context) {
+  const query_one = context.query.city1.toLowerCase();
+  const query_two = context.query.city2.toLowerCase();
 
-export default function Main() {
+  const res_city_one = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/details`);
+  const data_city_one = await res_city_one.json();
+
+  const res_city_two = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_two}/details`);
+  const data_city_two = await res_city_two.json();
+  
+  return {
+    props: {
+      // query: context.query,
+      data_city_one: data_city_one,
+      data_city_two: data_city_two
+    }, // will be passed to the page component as props
+  }
+}
+
+export default function Main(props) {
 
   const [screen, setScreen] = useState('loading2')
 
   const router = useRouter()
   const query = router.query
-  console.log("++++", query)
+  // console.log("++++", query)
+  // console.log("++", props.query)
+  console.log("++++", props.data_city_one);
+  console.log("++++", props.data_city_two);
 
   useEffect(()=>{
 
