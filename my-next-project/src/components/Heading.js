@@ -29,14 +29,12 @@ export default function Heading({ cities }) {
           <p className="py-5 text-xl">What's your destination?</p>
           <AutoComplete stateChanger={SetCountryOne} city_list={cities} />
           <AutoComplete stateChanger={SetCountryTwo} city_list={cities}/>
-          <Link href={{pathname: '/main'}}>
-            link is here
-          </Link>
-          
-            <button onClick={navigate}>
-              Submit
+          <br></br>
+          <button
+            onClick={navigate}
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+>           Submit
             </button>
-          
         </div>
       </div>
     </>
