@@ -13,7 +13,7 @@ export default function Card(props) {
         </div>
         <div className="px-3">
           <h5 className="text-2xl md:text-3xl font-medium mt-3">{name}</h5>
-          <p className="text-lg mt-3" dangerouslySetInnerHTML={{__html: summary}}></p>
+          <div className="text-lg mt-3" dangerouslySetInnerHTML={{__html: summary}}></div>
         </div>
       </div>
     </div>
