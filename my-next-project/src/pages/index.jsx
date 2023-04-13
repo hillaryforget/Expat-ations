@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
-import { useRouter } from 'next/router' 
+import Footer from "../components/Footer"
 
 export async function getStaticProps() {
   const cities = [];
@@ -17,10 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ city_list }) {
-  // const router = useRouter()
-  // const navigate = () => {
-  //   router.push({pathname: "/main", query: {city1: "Toronto", city2: "Ottawa"}})
-  // }
 
   return (
     <>
@@ -32,9 +28,7 @@ export default function Home({ city_list }) {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <Heading cities={city_list}/>
-      {/* <button onClick={navigate}>
-        testing
-      </button> */}
+      <Footer />
     </>
   );
 }
