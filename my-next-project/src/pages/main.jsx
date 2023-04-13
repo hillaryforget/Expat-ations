@@ -10,9 +10,9 @@ import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
 
 export async function getServerSideProps(context) {
-  const query_one = context.query.city1.toLowerCase();
-  const query_two = context.query.city2.toLowerCase();
-
+  const query_one = context.query.city1.replace(/\s+/g, '-').toLowerCase();
+  const query_two = context.query.city2.replace(/\s+/g, '-').toLowerCase();
+  
   //#region BASE LEVEL OF INFORMATION (name, continent,mayor, etc) //
   const res_city_one = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/`);
   const data_city_one = await res_city_one.json();
