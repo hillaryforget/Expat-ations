@@ -11,8 +11,12 @@ import PieGraphCard from "../components/PieGraphCard";
 import Col_Card from "../components/Col_Card";
 
 export async function getServerSideProps(context) {
-  const query_one = context.query.city1.toLowerCase();
-  const query_two = context.query.city2.toLowerCase();
+  let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
+  let query_two = context.query.city2.replace(/[,.]/g, '').toLowerCase();
+  query_one = query_one.replace(/\s+/, '-')
+  query_two = query_two.replace(/\s+/, '-')
+
+  const city_one_name = context.query.city1;
 
   //#region BASE LEVEL OF INFORMATION (name, continent,mayor, etc) //
   const res_city_one = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/`);
@@ -55,7 +59,8 @@ export async function getServerSideProps(context) {
       city_one_score: data_city_one_score,
       city_two_score: data_city_two_score,
       city_one_det: data_city_one_det,
-      city_two_det: data_city_two_det
+      city_two_det: data_city_two_det,
+      city_one_name: city_one_name
     }, // will be passed to the page component as props
   }
 }
@@ -66,6 +71,8 @@ export default function Main(props) {
 
   const router = useRouter()
   const query = router.query
+
+  console.log(props.city_one_name);
 
   //#region Console Logs
   // console.log("City One", props.city_one);
