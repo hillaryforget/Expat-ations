@@ -1,0 +1,14 @@
+/* styles/custom-animations.css */
+@keyframes slide {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(900%);
+  }
+}
+
+.slide-animation:hover {
+  animation: slide 5s linear;
+}
+
