@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
+import Col_Card from "../components/Col_Card";
 
 export async function getServerSideProps(context) {
   const query_one = context.query.city1.toLowerCase();
@@ -109,7 +110,9 @@ export default function Main(props) {
           </div>
         </div>
         <div className="flex flex-row gap-4 justify-around">
-          <div className="flex flex-row gap-4">
+          <Col_Card name={props.city_one.full_name} image={props.city_one_img.photos[0].image.web} summary={props.city_one_score.summary}/>
+          <Col_Card name={props.city_one.full_name} image={props.city_one_img.photos[0].image.web} summary={props.city_one_score.summary}/>
+          {/* <div className="flex flex-row gap-4">
             <div className="p-4">
               <PieGraphCard name={props.city_one_det.categories[8].label} data={props.city_one_det.categories[8].data} background_colors={['aqua', 'red', 'grey', 'yellow']} />
             </div>
@@ -124,7 +127,7 @@ export default function Main(props) {
             <div className="p-4">
             <PieGraphCard name={props.city_two_det.categories[9].label} data={props.city_two_det.categories[9].data} background_colors={['green', 'orange', 'pink', 'maroon']} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div> } 
     </>
