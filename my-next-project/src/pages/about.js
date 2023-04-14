@@ -11,8 +11,15 @@ const About = () => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar />
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mt-8">About Expat-ations</h1>
+      <div className="container mx-auto">
+        <div className="flex items-center">
+          <h1 className="text-4xl font-bold mt-8">About Expat-ations</h1>
+          <img
+            className="slide-animation w-8 h-8 mt-8"
+            src="/plane-solid.svg"
+            alt="Plane icon"
+          />
+        </div>
       </div>
       <br></br>
       <div class="container mx-auto px-4">
