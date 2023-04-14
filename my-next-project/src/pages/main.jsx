@@ -8,12 +8,16 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
+import BarGraph from "../components/BarGraph";
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
   let query_two = context.query.city2.replace(/[,.]/g, '').toLowerCase();
   query_one = query_one.replace(/\s+/, '-')
   query_two = query_two.replace(/\s+/, '-')
+
+  const cityOneName = context.query.city1
+  const cityTwoName = context.query.city2
 
   //#region BASE LEVEL OF INFORMATION (name, continent,mayor, etc) //
   const res_city_one = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/`);
@@ -56,12 +60,16 @@ export async function getServerSideProps(context) {
       city_one_score: data_city_one_score,
       city_two_score: data_city_two_score,
       city_one_det: data_city_one_det,
-      city_two_det: data_city_two_det
+      city_two_det: data_city_two_det,
+      city_one_name: cityOneName,
+      city_two_name: cityTwoName
     }, // will be passed to the page component as props
   }
 }
 
 export default function Main(props) {
+
+  console.log("++++++", props.city_one_name)
 
   const [screen, setScreen] = useState('loading2')
 
@@ -110,25 +118,34 @@ export default function Main(props) {
             <Card name={props.city_two.full_name} image={props.city_two_img.photos[0].image.web} summary={props.city_two_score.summary}/>
           </div>
         </div>
+        
         <div className="flex flex-row gap-4 justify-around">
-          <div className="flex flex-row gap-4">
-            <div className="p-4">
-              <PieGraphCard name={props.city_one_det.categories[8].label} data={props.city_one_det.categories[8].data} background_colors={['aqua', 'red', 'grey', 'yellow']} />
-            </div>
-            <div className="p-4">
-              <PieGraphCard name={props.city_one_det.categories[10].label} data={props.city_one_det.categories[10].data} background_colors={['aqua', 'red', 'grey', 'yellow']} />
-            </div>
-          </div>
-          <div className="flex flex-row gap-4">
-            <div className="p-4">
-              <PieGraphCard name={props.city_two_det.categories[8].label} data={props.city_two_det.categories[8].data} background_colors={['green', 'orange', 'pink', 'maroon']} />
-            </div>
-            <div className="p-4">
-            <PieGraphCard name={props.city_two_det.categories[9].label} data={props.city_two_det.categories[9].data} background_colors={['green', 'orange', 'pink', 'maroon']} />
-            </div>
-          </div>
+          <BarGraph 
+          city1 = {props.city_one_score}  
+          city2 = {props.city_two_score} 
+          city1Name={props.city_one_name}
+          city2Name={props.city_two_name}
+          />
+
         </div>
       </div> } 
     </>
   );
 }
+
+{/* <div className="flex flex-row gap-4">
+  <div className="p-4">
+    <PieGraphCard name={props.city_one_det.categories[8].label} data={props.city_one_det.categories[8].data} background_colors={['aqua', 'red', 'grey', 'yellow']} />
+  </div>
+  <div className="p-4">
+    <PieGraphCard name={props.city_one_det.categories[10].label} data={props.city_one_det.categories[10].data} background_colors={['aqua', 'red', 'grey', 'yellow']} />
+  </div>
+</div>
+<div className="flex flex-row gap-4">
+  <div className="p-4">
+    <PieGraphCard name={props.city_two_det.categories[8].label} data={props.city_two_det.categories[8].data} background_colors={['green', 'orange', 'pink', 'maroon']} />
+  </div>
+  <div className="p-4">
+  <PieGraphCard name={props.city_two_det.categories[9].label} data={props.city_two_det.categories[9].data} background_colors={['green', 'orange', 'pink', 'maroon']} />
+  </div>
+</div> */}
