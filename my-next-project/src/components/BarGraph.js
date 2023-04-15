@@ -34,6 +34,8 @@ num.forEach(item => {
 
 const options = {
   responsive: true,
+  aspectRatio: 1,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "right",

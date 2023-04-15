@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
 import BarGraph from "../components/BarGraph";
+import ColCard from "../components/Col_Card";
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
@@ -107,29 +108,45 @@ export default function Main(props) {
       <NavBar />
       { screen === "loading"  && <Loading /> }  
 
-      { screen !== "loading"  && <div className="p-4"> 
+      { screen !== "loading"  && <div className="p-4">  
 
       {/* <div className="flex justify-center">
         <SearchField />
       </div> */}
         <div className="flex flex-row gap-4 justify-center">
-          <div className="p-4">
+          <div>
             <Card name={props.city_one.full_name} image={props.city_one_img.photos[0].image.web} summary={props.city_one_score.summary}/>
           </div>
-          <div className="p-4">
+          <div>
             <Card name={props.city_two.full_name} image={props.city_two_img.photos[0].image.web} summary={props.city_two_score.summary}/>
           </div>
         </div>
-        
-        <div className="flex flex-row gap-4 justify-around">
-          <BarGraph 
-          city1 = {props.city_one_score}  
-          city2 = {props.city_two_score} 
-          city1Name={props.city_one_name}
-          city2Name={props.city_two_name}
-          />
-
+        <div className="flex flex-row gap-4 justify-center h-96 mt-4 mb-4 shadow-lg bg-gray-100">
+          <BarGraph
+              city1 = {props.city_one_score}  
+              city2 = {props.city_two_score} 
+              city1Name={props.city_one_name}
+              city2Name={props.city_two_name}
+              />
         </div>
+        <div className="flex flex-row gap-4 justify-center">
+          <div>
+            <ColCard name={props.city_one.full_name} image={props.city_one_img.photos[0].image.web} summary={props.city_one_score.summary}/>
+          </div>
+        </div>
+        {/* <div className="flex min-w-full">
+          <div className="p-4 h-64">
+            <BarGraph 
+            city1 = {props.city_one_score}  
+            city2 = {props.city_two_score} 
+            city1Name={props.city_one_name}
+            city2Name={props.city_two_name}
+            />
+          </div>
+        </div> */}
+        {/* <div className="flex flex-row gap-4 justify-around">
+          <ColCard/>
+        </div> */}
       </div> } 
     </>
   );
