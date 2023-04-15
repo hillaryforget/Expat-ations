@@ -113,35 +113,39 @@ export default function Main(props) {
         <div className="flex flex-row gap-4 justify-center">
           <div className="p-4">
             <Card 
-            name={props.city_one.full_name} 
-            image={props.city_one_img.photos[0].image.web} 
-            summary={props.city_one_score.summary}
+              name={props.city_one.full_name} 
+              image={props.city_one_img.photos[0].image.web} 
+              summary={props.city_one_score.summary}
             />
           </div>
           <div className="p-4">
             <Card 
-            name={props.city_two.full_name} 
-            image={props.city_two_img.photos[0].image.web} 
-            summary={props.city_two_score.summary}
+              name={props.city_two.full_name} 
+              image={props.city_two_img.photos[0].image.web} 
+              summary={props.city_two_score.summary}
             />
           </div>
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
           <div className="p-4"> 
-            <HighlightCard />
+            <HighlightCard 
+              city = {props.city_one_score} 
+            />
           </div>
-          <div className="p-4">
-            <HighlightCard />
-          </div>
+          {/* <div className="p-4">
+            <HighlightCard 
+              score = {props.city_two_score}
+            />
+          </div> */}
         </div>
         
         <div className="flex flex-row gap-4 justify-around">
           <BarGraph 
-          city1 = {props.city_one_score}  
-          city2 = {props.city_two_score} 
-          city1Name={props.city_one_name}
-          city2Name={props.city_two_name}
+            city1 = {props.city_one_score}  
+            city2 = {props.city_two_score} 
+            city1Name={props.city_one_name}
+            city2Name={props.city_two_name}
           />
         </div>
 
