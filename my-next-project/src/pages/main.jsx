@@ -133,11 +133,11 @@ export default function Main(props) {
               city = {props.city_one_score} 
             />
           </div>
-          {/* <div className="p-4">
+          <div className="p-4">
             <HighlightCard 
-              score = {props.city_two_score}
+              city = {props.city_two_score}
             />
-          </div> */}
+          </div>
         </div>
         
         <div className="flex flex-row gap-4 justify-around">
