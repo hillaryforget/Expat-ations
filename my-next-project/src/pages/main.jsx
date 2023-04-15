@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer"; 
 import Card from "../components/Card";
 import Card1 from "../components/Card1";
 import Card2 from "../components/Card2";
@@ -69,8 +70,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Main(props) {
-
-  console.log("++++++", props.city_one_name)
 
   const [screen, setScreen] = useState('loading2')
 
@@ -148,6 +147,7 @@ export default function Main(props) {
           <ColCard/>
         </div> */}
       </div> } 
+      <Footer />
     </>
   );
 }
