@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
+import Footer from "../components/Footer"
 
 export async function getServerSideProps(context) {
   const query_one = context.query.city1.replace(/\s+/g, '-').toLowerCase();
@@ -127,6 +128,7 @@ export default function Main(props) {
           </div>
         </div>
       </div> } 
+      <Footer />
     </>
   );
 }
