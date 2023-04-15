@@ -69,8 +69,6 @@ export async function getServerSideProps(context) {
 
 export default function Main(props) {
 
-  console.log("++++++", props.city_one_name)
-
   const [screen, setScreen] = useState('loading2')
 
   const router = useRouter()
