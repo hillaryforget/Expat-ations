@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer"; 
 import Card from "../components/Card";
 import Card1 from "../components/Card1";
 import Card2 from "../components/Card2";
@@ -127,6 +128,7 @@ export default function Main(props) {
 
         </div>
       </div> } 
+      <Footer />
     </>
   );
 }
