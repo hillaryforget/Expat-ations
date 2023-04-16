@@ -6,7 +6,7 @@ export default function Card(props) {
   // console.log("++", summary);
   
   return (
-     <div className="rounded-xl shadow-lg bg-gray-100 min-h-full max-w-screen-lg">
+    <div className="rounded-xl shadow-lg bg-[#e3f6f5] min-h-full max-w-screen-lg">
        <div className="flex flex-col">
         <div className="rounded-t-xl overflow-hidden">
            <img src={image} alt="" />
