@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -28,10 +29,10 @@ const Contact = () => {
           backgroundImage: `url('/map_bg.jpg')`,
         }}
       >
-        <Navbar /> {/* Add the Navbar component */}
-        <div className="max-w-md mx-auto mt-10">
+        <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
+        <div className="max-w-md mx-auto mt-10 pt-14">
           <div className="bg-opacity-50 bg-black p-4 rounded-md">
-            <h1 className="text-4xl font-bold text-white mb-8">
+            <h1 className="text-4xl font-bold text-white mt-6">
               Can't find the city you're looking for?
             </h1>
             <div className="max-w-md mx-auto mt-10">
@@ -77,6 +78,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

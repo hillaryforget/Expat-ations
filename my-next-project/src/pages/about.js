@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar />
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-14">
         <div className="flex items-center">
           <h1 className="text-4xl font-bold mt-8">About Expat-ations</h1>
           <img
@@ -32,6 +33,7 @@ const About = () => {
         <br></br>
         <p className="text-xl mt-4">At Expat-ations, we believe in the power of personalization and are committed to ensuring that you feel supported every step of the way. Our team consists of real people with diverse experiences and backgrounds, and we're excited to share our knowledge with you. Together, let's embark on this thrilling journey and find the perfect city to pave the way for a fulfilling, joyful, and prosperous future!</p>
       </div>
+      <Footer />
     </>
   );
 };
