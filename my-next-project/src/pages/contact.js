@@ -29,9 +29,9 @@ const Contact = () => {
         }}
       >
         <Navbar /> {/* Add the Navbar component */}
-        <div className="max-w-md mx-auto mt-10">
+        <div className="max-w-md mx-auto mt-10 pt-14">
           <div className="bg-opacity-50 bg-black p-4 rounded-md">
-            <h1 className="text-4xl font-bold text-white mb-8">
+            <h1 className="text-4xl font-bold text-white mt-6">
               Can't find the city you're looking for?
             </h1>
             <div className="max-w-md mx-auto mt-10">

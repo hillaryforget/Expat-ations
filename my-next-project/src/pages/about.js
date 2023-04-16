@@ -12,7 +12,7 @@ const About = () => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar />
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-14">
         <div className="flex items-center">
           <h1 className="text-4xl font-bold mt-8">About Expat-ations</h1>
           <img
