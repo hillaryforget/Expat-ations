@@ -1,13 +1,6 @@
 import * as React from 'react';
 
-const loop = (printResult) => {
-  const returnArray = []
-  printResult.forEach(el => 
-    returnArray.push(el))
-  return ` \n ${returnArray} \n`
-}
-
-export default function HiglightCard({city}) {
+export default function HiglightCard({city,cityName}) {
   
   const num = [0,1,2,5,7,8,9,10,11,12,13];
   let categoriesObj = {}; 
@@ -23,21 +16,28 @@ export default function HiglightCard({city}) {
     if (categoriesObj[key] >= 7){
       printResult.push(key)
     }
-  }
-
-  const highlight = loop(printResult); 
-
+  } 
 
   return (
-    <div className="rounded-xl shadow-lg bg-gray-200 h-80 w-full flex flex-row p-4">
-      <div>
-      <h1 className='text-lg'> 
-        This city has high scores on:  
-      </h1>
-      </div>
-        <div>
-        {highlight}
+    <>
+      <div className="rounded-xl shadow-lg bg-gray-200 h-full w-full flex flex-row p-4">
+        <div className='h-80 w-80'>
+        <img className='h-full w-full' src='highlight.svg' alt=''/>
         </div>
-    </div>
+        <div>
+          <h1> {cityName} scores on high on the following: </h1>
+          <br></br>
+          <ul>
+            {printResult.map(el => (
+              <li>
+                <br></br>
+                {el}
+                <br></br>
+              </li>
+              ))}
+          </ul>
+          </div>
+      </div>
+    </>
   );
 }

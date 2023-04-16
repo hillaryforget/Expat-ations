@@ -128,14 +128,14 @@ export default function Main(props) {
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
-          <div className="p-4"> 
+          <div className="flex flex-row gap-4 justify-center">
             <HighlightCard 
               city = {props.city_one_score} 
+              cityName = {props.city_one_name}
             />
-          </div>
-          <div className="p-4">
-            <HighlightCard 
+             <HighlightCard 
               city = {props.city_two_score}
+              cityName = {props.city_two_name}
             />
           </div>
         </div>
