@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
-import NavBar from "../components/NavBar";
+import Navbar from '../components/Navbar';
 import Footer from "../components/Footer";
 
 const About = () => {
@@ -12,7 +12,7 @@ const About = () => {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar />
+      <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
       <div className="container mx-auto pt-14">
         <div className="flex items-center">
           <h1 className="text-4xl font-bold mt-8">About Expat-ations</h1>
