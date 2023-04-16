@@ -28,7 +28,7 @@ const Contact = () => {
           backgroundImage: `url('/map_bg.jpg')`,
         }}
       >
-        <Navbar /> {/* Add the Navbar component */}
+        <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
         <div className="max-w-md mx-auto mt-10 pt-14">
           <div className="bg-opacity-50 bg-black p-4 rounded-md">
             <h1 className="text-4xl font-bold text-white mt-6">
