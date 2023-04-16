@@ -56,12 +56,12 @@ const data = {
     {
       label: city1Name,
       data: city_one_data,
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      backgroundColor: "#ffd803",
     },
     {
       label: city2Name,
       data: city_two_data,
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: "#bae8e8",
     },
   ],
 };

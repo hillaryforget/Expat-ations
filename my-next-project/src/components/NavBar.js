@@ -35,7 +35,7 @@ function NavBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item} disablePadding className="text-3xl">
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -51,7 +51,7 @@ function NavBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar className={props.className} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -72,7 +72,7 @@ function NavBar(props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} href={item === "Home" ? "/" : `/${item.toLowerCase()}`} passHref>
-                <Button sx={{ color: "#fff" }}>{item}</Button>
+                <Button sx={{ color: "#ffd803" }}>{item}</Button>
               </Link>
             ))}
           </Box>

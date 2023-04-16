@@ -28,7 +28,7 @@ export default function Home({ city_list }) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar />
+      <NavBar className={'bg-transparent shadow-none text-3xl'}/>
       <Heading cities={city_list}/>
       <Footer />
     </>

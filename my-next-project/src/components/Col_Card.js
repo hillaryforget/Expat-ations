@@ -3,50 +3,75 @@ import { useState } from 'react';
 
 export default function Col_Card(props) {
   const city_det = props.city_data;
-  console.log('+', city_det[1]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const titles = ['Groceries', 'Activities', 'Eating Out?']
+
+  const [currentIndex, setCurrentIndex] = useState('Groceries');
+  const [nextTitle, setNextTitle] = useState('Activities');
+  const [prevTitle, setPrevTitle] = useState('Eating Out');
 
   const nextSlide = (currentIndex) => {
-    let nextIndex = 0;
+    let slideIndex = '';
+    let nextIndex = '';
 
-    if(currentIndex === 2) {
-      nextIndex = 0
-    } else {
-      nextIndex = currentIndex + 1;
+    switch(currentIndex) {
+      case 'Groceries':
+        slideIndex = 'Activities';
+        nextIndex = 'Eating Out';
+        break;
+      case 'Activities':
+        slideIndex = 'Eating Out';
+        nextIndex = 'Groceries';
+        break;
+      case 'Eating Out':
+        slideIndex = 'Groceries';
+        nextIndex = 'Activities';
     }
 
-    setCurrentIndex(nextIndex);
+    setCurrentIndex(slideIndex);
+    setNextTitle(nextIndex);
+    setPrevTitle(currentIndex);
   }
 
   const prevSlide = (currentIndex) => {
-    let nextIndex = 0;
+    let slideIndex = '';
+    let prevIndex = '';
 
-    if(currentIndex === 0) {
-      nextIndex = 2
-    } else {
-      nextIndex = currentIndex - 1;
+    switch(currentIndex) {
+      case 'Groceries':
+        slideIndex = 'Eating Out';
+        prevIndex = 'Activities';
+        break;
+      case 'Activities':
+        slideIndex = 'Groceries';
+        prevIndex = 'Eating Out';
+        break;
+      case 'Eating Out':
+        slideIndex = 'Activities';
+        prevIndex = 'Groceries';
     }
 
-    setCurrentIndex(nextIndex);
+    setCurrentIndex(slideIndex);
+    setNextTitle(currentIndex);
+    setPrevTitle(prevIndex);
   }
 
   return (
-    <div className="rounded-xl shadow-lg bg-[#e3f6f5] h-96 w-full flex flex-col pt-4 pl-4 pr-4">
+    <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col pt-4 pl-4 pr-4 mb-6">
       <div className="flex flex-row h-full">
         <div className="w-2/5 h-full">
-          {currentIndex === 0 &&
+          {currentIndex === 'Groceries' &&
           <img className="w-full h-full" src="groceries.svg" />
           }
-          {currentIndex === 1 &&
+          {currentIndex === 'Activities' &&
           <img className="w-full h-full" src="workout.svg" />
           }
-          {currentIndex === 2 &&
+          {currentIndex === 'Eating Out' &&
           <img className="w-full h-full" src="restaurant.svg" />
           }
         </div>
         <div className="w-3/5 flex justify-center">
-        {currentIndex === 0 &&
+        {currentIndex === 'Groceries' &&
           <div className="h-full w-3/4 flex flex-col justify-evenly place-items-center bg-[#fffffe] rounded-xl">
             <h1 className="text-4xl">Groceries</h1>
             <ul>
@@ -59,7 +84,7 @@ export default function Col_Card(props) {
             </ul>
           </div>
         }
-        {currentIndex === 1 &&
+        {currentIndex === 'Activities' &&
           <div className="h-full w-3/4 flex flex-col justify-evenly place-items-center bg-[#fffffe] rounded-xl">
             <h1 className="text-4xl">Activities</h1>
             <ul>
@@ -71,7 +96,7 @@ export default function Col_Card(props) {
             </ul>
           </div>
         }
-        {currentIndex === 2 &&
+        {currentIndex === 'Eating Out' &&
           <div className="h-full w-3/4 flex flex-col justify-evenly place-items-center bg-[#fffffe] rounded-xl">
             <h1 className="text-4xl">Eating Out?</h1>
             <ul>
@@ -84,9 +109,9 @@ export default function Col_Card(props) {
         }
         </div>
       </div>
-      <div className="flex flex-row h-1/6 text-4xl items-center justify-between">
-        <button onClick={() => prevSlide(currentIndex)}>&lt;</button>
-        <button onClick={() => nextSlide(currentIndex)}>&gt;</button>
+      <div className="flex flex-row h-1/6 text-2xl items-center justify-between">
+        <button onClick={() => prevSlide(currentIndex)}>&lt; {prevTitle}</button>
+        <button onClick={() => nextSlide(currentIndex)}>{nextTitle} &gt;</button>
       </div>
     </div>
   );

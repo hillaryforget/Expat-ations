@@ -1,14 +1,10 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer"; 
 import Card from "../components/Card";
-import Card1 from "../components/Card1";
-import Card2 from "../components/Card2";
 import Head from "next/head";
-import SearchField from "../components/SearchField";
 import { useRouter } from 'next/router' 
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
-import PieGraphCard from "../components/PieGraphCard";
 import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
 import HighlightCard from "../components/HighlightCard";
@@ -105,42 +101,46 @@ export default function Main(props) {
 
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar />
+      <NavBar className={'bg-[#e3f6f5] shadow-none text-[#ffd803] text-3xl'}/>
       { screen === "loading"  && <Loading /> }  
 
-      { screen !== "loading"  && <div className="p-4 bg-[#fffffe]">  
+      { screen !== "loading"  && <div className="p-4 bg-[#e3f6f5]">  
 
       {/* <div className="flex justify-center">
         <SearchField />
       </div> */}
         <div className="flex flex-row gap-4 justify-center">
-          <div className="p-4">
             <Card 
               name={props.city_one.full_name} 
               image={props.city_one_img.photos[0].image.web} 
               summary={props.city_one_score.summary}
             />
-          </div>
-          <div className="p-4">
             <Card 
               name={props.city_two.full_name} 
               image={props.city_two_img.photos[0].image.web} 
               summary={props.city_two_score.summary}
             />
-          </div>
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
-          <div className="flex flex-row gap-4 justify-center">
-            <HighlightCard 
-              city = {props.city_one_score} 
-              cityName = {props.city_one_name}
-            />
-             <HighlightCard 
-              city = {props.city_two_score}
-              cityName = {props.city_two_name}
-            />
-          </div>
+          <HighlightCard 
+            city = {props.city_one_score} 
+            cityName = {props.city_one_name}
+          />
+          <HighlightCard 
+            city = {props.city_two_score}
+            cityName = {props.city_two_name}
+          />
+        </div>
+
+        <div className="flex flex-row gap-4 justify-center">
+          <ColCard city_data={props.city_one_det.categories[3].data}/>
+          <ColCard city_data={props.city_two_det.categories[3].data}/>
+        </div>
+
+        <div className="flex flex-row gap-4 justify-center">
+          <ColCard city_data={props.city_one_det.categories[3].data}/>
+          <ColCard city_data={props.city_two_det.categories[3].data}/>
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
@@ -148,7 +148,7 @@ export default function Main(props) {
           <ColCard city_data={props.city_two_det.categories[3].data}/>
         </div>
         
-        <div className="flex flex-row gap-4 justify-around">
+        <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl">
           <BarGraph 
             city1 = {props.city_one_score}  
             city2 = {props.city_two_score} 

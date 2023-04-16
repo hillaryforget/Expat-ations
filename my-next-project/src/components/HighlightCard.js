@@ -20,7 +20,7 @@ export default function HiglightCard({city,cityName}) {
 
   return (
     <>
-      <div className="rounded-xl shadow-lg bg-gray-200 h-full w-full flex flex-row p-4">
+      <div className="rounded-xl shadow-lg bg-[#fffffe] h-full w-full flex flex-row p-4 mb-6">
         <div className='h-80 w-80'>
         <img className='h-full w-full' src='highlight.svg' alt=''/>
         </div>
