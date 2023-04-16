@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const [email, setEmail] = useState('');
@@ -77,6 +78,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
