@@ -134,18 +134,8 @@ export default function Main(props) {
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
-          <ColCard city_data={props.city_one_det.categories[3].data}/>
-          <ColCard city_data={props.city_two_det.categories[3].data}/>
-        </div>
-
-        <div className="flex flex-row gap-4 justify-center">
-          <ColCard city_data={props.city_one_det.categories[3].data}/>
-          <ColCard city_data={props.city_two_det.categories[3].data}/>
-        </div>
-
-        <div className="flex flex-row gap-4 justify-center">
-          <ColCard city_data={props.city_one_det.categories[3].data}/>
-          <ColCard city_data={props.city_two_det.categories[3].data}/>
+          <ColCard city_data={props.city_one_det.categories}/>
+          <ColCard city_data={props.city_two_det.categories}/>
         </div>
         
         <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl">
