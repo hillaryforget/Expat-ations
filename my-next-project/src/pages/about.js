@@ -33,6 +33,7 @@ const About = () => {
         <br></br>
         <p className="text-xl mt-4">At Expat-ations, we believe in the power of personalization and are committed to ensuring that you feel supported every step of the way. Our team consists of real people with diverse experiences and backgrounds, and we're excited to share our knowledge with you. Together, let's embark on this thrilling journey and find the perfect city to pave the way for a fulfilling, joyful, and prosperous future!</p>
       </div>
+      <Footer />
     </>
   );
 };
