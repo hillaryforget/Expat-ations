@@ -4,5 +4,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animation-delay"),
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+  ],
 };
