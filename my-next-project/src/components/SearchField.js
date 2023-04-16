@@ -12,7 +12,7 @@ export default function AutoComplete({ stateChanger, city_list }) {
           disablePortal
           id="combo-box-demo"
           options={city_list}
-          sx={{ width: 300 }}
+          sx={{ width: "100" }}
           renderInput={(params) => <TextField {...params} label="City" />}
         />
       </div>

@@ -11,6 +11,7 @@ import Loading from "../components/Loading";
 import PieGraphCard from "../components/PieGraphCard";
 import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
+import HighlightCard from "../components/HighlightCard";
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
@@ -113,26 +114,50 @@ export default function Main(props) {
         <SearchField />
       </div> */}
         <div className="flex flex-row gap-4 justify-center">
-          <div>
-            <Card name={props.city_one.full_name} image={props.city_one_img.photos[0].image.web} summary={props.city_one_score.summary}/>
+          <div className="p-4">
+            <Card 
+              name={props.city_one.full_name} 
+              image={props.city_one_img.photos[0].image.web} 
+              summary={props.city_one_score.summary}
+            />
           </div>
-          <div>
-            <Card name={props.city_two.full_name} image={props.city_two_img.photos[0].image.web} summary={props.city_two_score.summary}/>
+          <div className="p-4">
+            <Card 
+              name={props.city_two.full_name} 
+              image={props.city_two_img.photos[0].image.web} 
+              summary={props.city_two_score.summary}
+            />
           </div>
         </div>
-        <div className="flex flex-row gap-4 justify-center h-96 mt-4 mb-4 shadow-lg bg-[#e3f6f5] rounded-xl p-4">
-          <BarGraph
-              city1 = {props.city_one_score}  
-              city2 = {props.city_two_score} 
-              city1Name={props.city_one_name}
-              city2Name={props.city_two_name}
-              />
+
+        <div className="flex flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-4 justify-center">
+            <HighlightCard 
+              city = {props.city_one_score} 
+              cityName = {props.city_one_name}
+            />
+             <HighlightCard 
+              city = {props.city_two_score}
+              cityName = {props.city_two_name}
+            />
+          </div>
         </div>
+
         <div className="flex flex-row gap-4 justify-center">
           <ColCard city_data={props.city_one_det.categories[3].data}/>
           <ColCard city_data={props.city_two_det.categories[3].data}/>
         </div>
-      </div> }
+        
+        <div className="flex flex-row gap-4 justify-around">
+          <BarGraph 
+            city1 = {props.city_one_score}  
+            city2 = {props.city_two_score} 
+            city1Name={props.city_one_name}
+            city2Name={props.city_two_name}
+          />
+        </div>
+
+      </div> } 
       <Footer />
     </>
   );

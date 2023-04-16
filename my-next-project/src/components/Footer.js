@@ -21,7 +21,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            Lighthouse Labs final project made by Clayton, Joon, Hilary and Christian. 
+            Lighthouse Labs final project made by Clayton, Joon, Hillary and Christian. 
           </Typography>
         </Container>
       </Box>
