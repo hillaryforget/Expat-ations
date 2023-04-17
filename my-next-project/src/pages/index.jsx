@@ -30,7 +30,16 @@ export default function Home({ city_list }) {
       </Head>
       <NavBar className={"bg-transparent shadow-none text-3xl"} />
       <Heading cities={city_list} />
-      <CurrencyConverter />
+
+      <div
+        className="min-h-screen bg-fixed bg-center bg-cover"
+        style={{
+          background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+        }}
+      ></div>
+      <div class="flex flex-row justify-center">
+        <CurrencyConverter />
+      </div>
       <Footer />
     </>
   );
