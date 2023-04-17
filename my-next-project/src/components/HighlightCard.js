@@ -1,4 +1,5 @@
 import * as React from 'react';
+import DoughnutGraph from './DoughnutGraph';
 
 export default function HiglightCard({city,cityName}) {
   
@@ -20,23 +21,28 @@ export default function HiglightCard({city,cityName}) {
 
   return (
     <>
-      <div className="rounded-xl shadow-lg bg-[#fffffe] h-full w-full flex flex-row p-4 mb-6">
+      <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-row p-4 mb-6">
         <div className='h-80 w-80'>
-        <img className='h-full w-full' src='highlight.svg' alt=''/>
+          <img className='h-full w-full' src='highlight.svg' alt=''/>
         </div>
-        <div>
-          <h1> {cityName} scores on high on the following: </h1>
-          <br></br>
-          <ul>
-            {printResult.map(el => (
-              <li>
-                <br></br>
-                {el}
-                <br></br>
-              </li>
-              ))}
-          </ul>
+        <div className="flex flex-col h-full">
+          <div className="h-1/2">
+            <DoughnutGraph className="h-full w-full" cityScores={city}/>
           </div>
+          <div className="h-1/2">
+            <br/>
+            <h1> {cityName} scores high on the following: </h1>
+            <br/>
+            <ul>
+              {printResult.map(el => (
+                <li>
+                  <br/>
+                  {el}
+                </li>
+                ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );

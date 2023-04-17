@@ -126,7 +126,7 @@ export default function Main(props) {
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-row gap-4 justify-center px-4">
             <Card 
               name={props.city_one.full_name} 
               image={props.city_one_img.photos[0].image.web} 
@@ -139,7 +139,7 @@ export default function Main(props) {
             />
         </div>
 
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-row gap-4 justify-center px-4">
           <HighlightCard 
             city = {props.city_one_score} 
             cityName = {props.city_one_name}
@@ -150,7 +150,7 @@ export default function Main(props) {
           />
         </div>
 
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-row gap-4 justify-center px-4">
           <ColCard city_data={props.city_one_det.categories}/>
           <ColCard city_data={props.city_two_det.categories}/>
         </div>
