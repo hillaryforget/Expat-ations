@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavBar from '../components/NavBar';
 import Footer from "../components/Footer"; 
 import Card from "../components/Card";
 import Head from "next/head";
@@ -101,7 +101,7 @@ export default function Main(props) {
 
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
+      <NavBar className={'bg-transparent shadow-none text-3xl'}/> {/*Add the Navbar component*/}
       { screen === "loading"  && <Loading /> }  
 
       { screen !== "loading"  && <div className=" bg-[#e3f6f5]">  
