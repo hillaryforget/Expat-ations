@@ -1,24 +1,24 @@
 import Head from "next/head";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar"; 
+import NavBar from "../components/NavBar";
+import CurrencyConverter from "../components/CurrencyConverter";
 
 export async function getStaticProps() {
   const cities = [];
-  const res = await fetch('https://api.teleport.org/api/urban_areas/');
+  const res = await fetch("https://api.teleport.org/api/urban_areas/");
   const data = await res.json();
 
-  data._links['ua:item'].forEach(city => cities.push(city.name));
+  data._links["ua:item"].forEach((city) => cities.push(city.name));
 
   return {
     props: {
-      city_list: cities
+      city_list: cities,
     },
-  }
+  };
 }
 
 export default function Home({ city_list }) {
-
   return (
     <>
       <Head>
@@ -28,10 +28,10 @@ export default function Home({ city_list }) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={'bg-transparent shadow-none text-3xl'}/>
-      <Heading cities={city_list}/>
+      <NavBar className={"bg-transparent shadow-none text-3xl"} />
+      <Heading cities={city_list} />
+      <CurrencyConverter />
       <Footer />
     </>
   );
 }
-
