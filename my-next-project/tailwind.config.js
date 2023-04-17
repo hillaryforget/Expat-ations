@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'background': '#fffffe',
-      'paragraph': '#2d334a',
-      'secondary': '#e3f6f5',
-      'tertiary': '#bae8e8'
-    }
+      background: "#fffffe",
+      paragraph: "#2d334a",
+      secondary: "#e3f6f5",
+      tertiary: "#bae8e8",
+    },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require("@tailwindcss/forms")],
 };

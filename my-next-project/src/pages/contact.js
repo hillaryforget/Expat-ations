@@ -30,12 +30,12 @@ const Contact = () => {
       >
         <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
         <div className="max-w-md mx-auto mt-10 pt-14">
-          <div className="bg-opacity-50 bg-black p-4 rounded-md">
-            <h1 className="text-4xl font-bold text-white mt-6">
+          <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
+            <h1 className="text-4xl font-bold text-#2d334a mt-6">
               Can't find the city you're looking for?
             </h1>
             <div className="max-w-md mx-auto mt-10">
-          <h1 className="text-4xl font-bold text-white mb-8">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-#2d334a mb-8">Contact Us</h1>
           </div>
         </div>
         <br></br>
