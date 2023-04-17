@@ -30,7 +30,7 @@ function NavBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Expat-ations
       </Typography>
       <Divider />
       <List>
@@ -62,6 +62,9 @@ function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          <a href="/" style={{
+            flexGrow: '1',
+          }}>
           <Typography
             variant="h6"
             component="div"
@@ -69,6 +72,7 @@ function NavBar(props) {
           >
             Expat-ations
           </Typography>
+          </a>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} href={item === "Home" ? "/" : `/${item.toLowerCase()}`} passHref>

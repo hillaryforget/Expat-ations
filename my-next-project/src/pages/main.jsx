@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; 
 import Card from "../components/Card";
 import Head from "next/head";
@@ -101,14 +101,31 @@ export default function Main(props) {
 
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={'bg-[#e3f6f5] shadow-none text-[#ffd803] text-3xl'}/>
+      <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
       { screen === "loading"  && <Loading /> }  
 
-      { screen !== "loading"  && <div className="p-4 bg-[#e3f6f5]">  
+      { screen !== "loading"  && <div className=" bg-[#e3f6f5]">  
 
       {/* <div className="flex justify-center">
         <SearchField />
       </div> */}
+
+<div style={{
+          background: `linear-gradient(250deg, #272343, rgba(255,255,255,0) 70.71%),            
+          linear-gradient(127deg, #ffd803, rgba(255,255,255,.05) 80.71%)
+          `
+        }}>
+          <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
+            <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
+              <h1
+                class="py-28 lg:py-36 font-display text-5xl font-bold tracking-tighter sm:text-7xl"
+                style={{ color: "#272343" }}
+              >
+                {props.city_one.name} vs. {props.city_two.name}
+              </h1>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-row gap-4 justify-center">
             <Card 
               name={props.city_one.full_name} 
