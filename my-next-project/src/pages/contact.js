@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here, e.g., sending an email
