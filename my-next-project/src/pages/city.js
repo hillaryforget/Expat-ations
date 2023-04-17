@@ -70,7 +70,7 @@ export default function Home() {
         <title>Expat-ations</title>
         <link rel="icon" href="/location.svg" />
       </Head>
-      <NavBar />
+      <NavBar className={"bg-transparent shadow-none text-3xl"} />
       <SimpleContainer>
         <main className={styles.main}>
           <h3>Find a city</h3>

@@ -57,6 +57,7 @@ export default function CurrencyConverter() {
         onChange={handleAmountChange}
         min="1"
         step="any"
+        className="inline-block border border-gray-500 px-4 py-2 rounded-md"
       />
       <Select value={baseCurrency} onChange={handleBaseCurrencyChange}>
         {currencies.map((currency) => (
@@ -70,6 +71,7 @@ export default function CurrencyConverter() {
         type="number"
         value={conversionRate ? amount * conversionRate : ""}
         readOnly
+        className="inline-block border border-gray-500 px-4 py-2 rounded-md"
       />
       <Select value={targetCurrency} onChange={handleTargetCurrencyChange}>
         {currencies.map((currency) => (

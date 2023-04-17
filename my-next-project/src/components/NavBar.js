@@ -62,20 +62,28 @@ function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <a href="/" style={{
-            flexGrow: '1',
-          }}>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          <a
+            href="/"
+            style={{
+              flexGrow: "1",
+            }}
           >
-            Expat-ations
-          </Typography>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            >
+              Expat-ations
+            </Typography>
           </a>
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Link key={item} href={item === "Home" ? "/" : `/${item.toLowerCase()}`} passHref>
+              <Link
+                key={item}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                passHref
+              >
                 <Button sx={{ color: "#ffd803" }}>{item}</Button>
               </Link>
             ))}
