@@ -13,23 +13,35 @@ const About = () => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <div
-  className="min-h-screen bg-fixed bg-center bg-cover"
-  style={{
-    background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
-  }}
->
-
-       <Navbar className={'bg-transparent shadow-none text-3xl'}/> {/* Add the Navbar component */}
-          <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
-            <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
+        className="min-h-screen bg-fixed bg-center bg-cover"
+        style={{
+          background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+        }}
+      >
+        <Navbar className={'bg-transparent shadow-none text-3xl'} /> {/* Add the Navbar component */}
+        <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
+          <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
+            <div className="text-center py-28 lg:py-25">
               <h1
-                class="py-28 lg:py-25 font-display text-5xl font-bold tracking-tighter sm:text-7xl"
+                class="font-display text-5xl font-bold tracking-tighter sm:text-7xl"
                 style={{ color: "#272343" }}
               >
-                About Expat-ations
+                About Us
               </h1>
+              <img
+                class="mx-auto mt-4"
+                src="Expat-ations.png"
+                alt="Expat-ations"
+                style={{
+                  maxWidth: '100%',
+                  borderRadius: '8px',
+                  width: '800px', // Increase the width
+                  height: 'auto', // Maintain aspect ratio
+                }}
+              />
             </div>
           </div>
+        </div>
         
           <div className="container mx-auto">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
