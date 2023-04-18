@@ -41,18 +41,21 @@ export default function Home({ city_list }) {
       <HeroSection />
 
       <div
-        className="min-h-screen bg-fixed bg-center bg-cover"
+        className=" flex flex-col justify min-h-screen bg-fixed bg-center bg-cover"
         style={{
           background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
         }}
-        >
-          {/* <Heading cities={city_list} /> */}
-        {/* <Link
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
-          href = "/city"
-        > 
-          Chat-GPT 
-        </Link> */}
+      >
+
+          <Heading cities={city_list} />
+
+          <Link
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+            href = "/city"
+          > 
+            Chat-GPT 
+          </Link>
+ 
         
       </div>
 
