@@ -110,7 +110,7 @@ export default function Main(props) {
         <SearchField />
       </div> */}
 
-<div style={{
+<div className="flex items-center" style={{
           background: `linear-gradient(250deg, #272343, rgba(255,255,255,0) 70.71%),            
           linear-gradient(127deg, #ffd803, rgba(255,255,255,.05) 80.71%)
           `

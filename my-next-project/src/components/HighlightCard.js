@@ -26,9 +26,9 @@ export default function HiglightCard({city,cityName}) {
           <img className='h-full w-full' src='highlight.svg' alt=''/>
         </div>
         <div className="flex h-full">
-          <div className="flex w-1/2 items-center pb-5">
+          {/* <div className="flex w-1/2 items-center pb-5">
             <DoughnutGraph className="h-full w-full" cityScores={city}/>
-          </div>
+          </div> */}
           <div className="w-1/2">
             <br/>
             <h1> {cityName} scores high on the following: </h1>
