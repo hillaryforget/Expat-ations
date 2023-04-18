@@ -98,74 +98,58 @@ export default function Main(props) {
       <Head>
         <title>Expat-ations</title>
         <link rel="icon" href="/plane-solid.svg" />
-
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={'bg-transparent shadow-none text-3xl'}/> {/*Add the Navbar component*/}
-      { screen === "loading"  && <Loading /> }  
-
-      { screen !== "loading"  && <div className=" bg-[#e3f6f5]">  
-
-      {/* <div className="flex justify-center">
-        <SearchField />
-      </div> */}
-
-<div style={{
-          background: `linear-gradient(250deg, #272343, rgba(255,255,255,0) 70.71%),            
-          linear-gradient(127deg, #ffd803, rgba(255,255,255,.05) 80.71%)
-          `
-        }}>
-          <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
-            <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
-              <h1
-                class="py-28 lg:py-36 font-display text-5xl font-bold tracking-tighter sm:text-7xl"
-                style={{ color: "#272343" }}
-              >
-                {props.city_one.name} vs. {props.city_two.name}
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-row gap-4 justify-center">
-            <Card 
-              name={props.city_one.full_name} 
-              image={props.city_one_img.photos[0].image.web} 
+      <NavBar className={'bg-transparent shadow-none text-3xl'} /> {/*Add the Navbar component*/}
+      {screen === "loading" && <Loading />}
+  
+      {screen !== "loading" && (
+        <div
+        className="min-h-screen bg-fixed bg-center bg-cover"
+        style={{
+          background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+        }}
+      >
+          <div className="flex flex-row gap-4 justify-center pt-6">
+            <Card
+              name={props.city_one.full_name}
+              image={props.city_one_img.photos[0].image.web}
               summary={props.city_one_score.summary}
             />
-            <Card 
-              name={props.city_two.full_name} 
-              image={props.city_two_img.photos[0].image.web} 
+            <Card
+              name={props.city_two.full_name}
+              image={props.city_two_img.photos[0].image.web}
               summary={props.city_two_score.summary}
             />
+          </div>
+  
+          <div className="flex flex-row gap-4 justify-center">
+            <HighlightCard
+              city={props.city_one_score}
+              cityName={props.city_one_name}
+            />
+            <HighlightCard
+              city={props.city_two_score}
+              cityName={props.city_two_name}
+            />
+          </div>
+  
+          <div className="flex flex-row gap-4 justify-center">
+            <ColCard city_data={props.city_one_det.categories} />
+            <ColCard city_data={props.city_two_det.categories} />
+          </div>
+  
+          <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl">
+            <BarGraph
+              city1={props.city_one_score}
+              city2={props.city_two_score}
+              city1Name={props.city_one_name}
+              city2Name={props.city_two_name}
+            />
+          </div>
         </div>
-
-        <div className="flex flex-row gap-4 justify-center">
-          <HighlightCard 
-            city = {props.city_one_score} 
-            cityName = {props.city_one_name}
-          />
-          <HighlightCard 
-            city = {props.city_two_score}
-            cityName = {props.city_two_name}
-          />
-        </div>
-
-        <div className="flex flex-row gap-4 justify-center">
-          <ColCard city_data={props.city_one_det.categories}/>
-          <ColCard city_data={props.city_two_det.categories}/>
-        </div>
-        
-        <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl">
-          <BarGraph 
-            city1 = {props.city_one_score}  
-            city2 = {props.city_two_score} 
-            city1Name={props.city_one_name}
-            city2Name={props.city_two_name}
-          />
-        </div>
-
-      </div> } 
+      )}
       <Footer />
     </>
   );
-}
+      }  

@@ -132,7 +132,7 @@ export default function Col_Card(props) {
                 <p className="flex flex-col items-center">
                   <span className="text-m">the cost of</span>
                   <span className="text-4xl"><b>${Object.values(coffee)[0].toFixed(2)}</b></span>
-                  <span className="text-m">a cup of cofee</span>
+                  <span className="text-m">a cup of coffee</span>
                 </p>
                 }
               </div>
