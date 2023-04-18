@@ -9,3 +9,11 @@ html {
 .custom-img {
   background-image: url("https://www.pexels.com/photo/woman-looking-at-the-map-3935702/");
 }
+
+.glass-shadow {
+    background: rgba(0,0,0,0.2);
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    filter: drop-shadow(2px 4px 6px black);
+}
