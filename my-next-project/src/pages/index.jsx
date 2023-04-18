@@ -1,9 +1,11 @@
 import Head from "next/head";
+import HeroSection from "../components/HeroSection"
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import CurrencyConverter from "../components/CurrencyConverter";
 import Link from "next/link";
+import SearchField from "../components/SearchField"; 
 
 export async function getStaticProps() {
   const cities = [];
@@ -35,21 +37,22 @@ export default function Home({ city_list }) {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar className={"bg-transparent shadow-none text-3xl"} />
-      <Heading cities={city_list} />
+
+      <HeroSection />
 
       <div
         className="min-h-screen bg-fixed bg-center bg-cover"
         style={{
           background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
         }}
-      >
-        <Link
+        >
+          {/* <Heading cities={city_list} /> */}
+        {/* <Link
           className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
           href = "/city"
         > 
           Chat-GPT 
-        </Link>
-       
+        </Link> */}
         
       </div>
 
