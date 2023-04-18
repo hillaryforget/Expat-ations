@@ -6,7 +6,7 @@ export default function HeroSection(){
         <div className="p-5 text-[#2d334a] z-10 -mt-40 max-w-7xl">
           <h1 className="glass-shadow text-5xl font-bold mb-5 text-center">Expat-ations</h1>
           <p className="glass-shadow inline text-xl text-center">
-          Discovering the perfect destination for your next adventure or big move can be challenging, and that's where Expat-ations comes in. We are passionate about helping you find the city that matches your desires and priorities, whether you're dreaming of basking in the sun by the beach, cutting living expenses, or immersing yourself in a vibrant startup scene.
+          Find your ideal city tailored to your preferences. Effortlessly compare 266+ cities worldwide, evaluating factors such as cost of living, quality of life, safety, healthcare, and more. If you're uncertain about your destination, let us guide you with personalized suggestions that align with your priorities. Know what to expect with Expat-ations.
           </p>
         </div>
       </div>

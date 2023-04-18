@@ -49,9 +49,9 @@ export default function Home({ city_list }) {
           <div className="flex m-auto">
 
             <div className=" p-3">
-              <h1 className="text-5xl font-bold mb-5 text-center">Choose your Next Journey</h1>
-              <p className="pb-5 text-xl text-center">Choose the cities you want to compare to gain more insight on your next destination.</p>
-              <p className="pb-5 text-xl text-center">Looking for inspiration? Use our ChatGPT feature.</p>
+              <h1 className="text-5xl font-bold mb-5 text-center">Where will you go?</h1>
+              <p className="pb-5 text-xl text-center">Select the cities you want to compare to gain more insight on your next destination.</p>
+              <p className="pb-5 text-xl text-center">Not sure what city is for you? Explore to view suggested cities based on your needs.</p>
               <Heading cities={city_list} />
             </div>
           </div>

@@ -22,7 +22,7 @@ function SimpleContainer(props) {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
-        <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
+        <Box sx={{ height: "100vh" }}>
           {props.children}{" "}
         </Box>
       </Container>
@@ -65,7 +65,12 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div
+      className="min-h-screen bg-fixed bg-center bg-cover"
+      style={{
+        background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+      }}
+    >
       <Head>
         <title>Expat-ations</title>
         <link rel="icon" href="/location.svg" />

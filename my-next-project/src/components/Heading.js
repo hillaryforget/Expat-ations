@@ -48,7 +48,7 @@ export default function Heading({ cities }) {
               className="mx-3 bg-gray-100 text-blue-500 p-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none hover:text-gray-50 active:text-gray-50 focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
               href = "/city"
             > 
-              Chat-GPT 
+              Explore 
             </Link>
           </div>
 
