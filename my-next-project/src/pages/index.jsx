@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import CurrencyConverter from "../components/CurrencyConverter";
-import Link from "next/link";
+
 import SearchField from "../components/SearchField"; 
 
 export async function getStaticProps() {
@@ -41,20 +41,21 @@ export default function Home({ city_list }) {
       <HeroSection />
 
       <div
-        className=" flex flex-col justify min-h-screen bg-fixed bg-center bg-cover"
+        className="flex min-h-screen bg-fixed bg-center bg-cover align-center justify-center"
         style={{
           background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
         }}
       >
+          <div className="flex m-auto">
 
-          <Heading cities={city_list} />
+            <div className=" p-3">
+              <h1 className="text-5xl font-bold mb-5 text-center">Choose your Next Journey</h1>
+              <p className="pb-5 text-xl text-center">Choose the cities you want to compare to gain more insight on your next destination.</p>
+              <p className="pb-5 text-xl text-center">Looking for inspiration? Use our ChatGPT feature.</p>
+              <Heading cities={city_list} />
+            </div>
+          </div>
 
-          <Link
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
-            href = "/city"
-          > 
-            Chat-GPT 
-          </Link>
  
         
       </div>

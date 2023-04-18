@@ -2,6 +2,7 @@ import AutoComplete from "./SearchField";
 import { useState } from 'react';
 // import Link from 'next/link';
 import { useRouter } from 'next/router'
+import Link from "next/link";
 
 function showState(propOne, propTwo) {
   console.log(propOne);
@@ -21,7 +22,7 @@ export default function Heading({ cities }) {
 
   return (
 
-      <div >
+      <div className="flex flex-col align-center" >
          <div className="w-full md:w-96 mx-auto">
             <AutoComplete 
              stateChanger={SetCountryOne} 
@@ -36,12 +37,21 @@ export default function Heading({ cities }) {
             />
           </div>
           <br></br>
+          <div className="flex align-center justify-center">
           <button
             onClick={navigate}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+            className="mx-3 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
           >
             Submit
           </button>
+          <Link
+              className="mx-3 bg-gray-100 text-blue-500 p-2 rounded-lg shadow hover:bg-blue-600 active:bg-blue-800 focus:outline-none hover:text-gray-50 active:text-gray-50 focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+              href = "/city"
+            > 
+              Chat-GPT 
+            </Link>
+          </div>
+
         </div>
 
   );       
