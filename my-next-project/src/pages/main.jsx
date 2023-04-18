@@ -99,7 +99,6 @@ export default function Main(props) {
       <Head>
         <title>Expat-ations</title>
         <link rel="icon" href="/plane-solid.svg" />
-
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar className={'bg-transparent shadow-none text-3xl'}/> {/*Add the Navbar component*/}
@@ -133,12 +132,12 @@ export default function Main(props) {
               image={props.city_one_img.photos[0].image.web} 
               summary={props.city_one_score.summary}
             />
-            <Card 
-              name={props.city_two.full_name} 
-              image={props.city_two_img.photos[0].image.web} 
+            <Card
+              name={props.city_two.full_name}
+              image={props.city_two_img.photos[0].image.web}
               summary={props.city_two_score.summary}
             />
-        </div>
+          </div>
 
         <div className="flex flex-row gap-4 justify-center px-4">
           <HighlightCard 
@@ -169,9 +168,8 @@ export default function Main(props) {
             city2Name={props.city_two_name}
           />
         </div>
-
       </div> } 
       <Footer />
     </>
   );
-}
+      }  
