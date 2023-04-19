@@ -51,7 +51,7 @@ function NavBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar className={props.className} component="nav">
+      <AppBar className={"bg-transparent shadow-none text-3xl"} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"

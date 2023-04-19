@@ -8,23 +8,14 @@ import NavBar from "../components/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import CircularStatic from "../components/Circleloading";
-
-function CircularIndeterminate() {
-  return (
-    <Box sx={{ display: "flex" }}>
-      <CircularProgress />
-    </Box>
-  );
-}
+import Modal from "../components/Modal";
 
 function SimpleContainer(props) {
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
-        <Box sx={{ height: "100vh" }}>
-          {props.children}{" "}
-        </Box>
+        <Box sx={{ height: "100vh" }}>{props.children} </Box>
       </Container>
     </React.Fragment>
   );
@@ -39,6 +30,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const [result, setResult] = useState();
+
+  const [openModal, setOpenModal] = useState(false);
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -129,22 +122,20 @@ export default function Home() {
               value={activity}
               onChange={(e) => setActivity(e.target.value)}
             />
-            <input type="submit" value="Suggest" />
-          </form>
-          {loading && (
-            <div>
-              <h3>Looking for your cities 💡 </h3>
-              <CircularStatic />
-            </div>
-          )}
-          {result && (
-            <div
-              className={styles.result}
-              dangerouslySetInnerHTML={{ __html: result }}
+            <input
+              type="submit"
+              value="Suggest"
+              onClick={() => setOpenModal(true)}
             />
-          )}
+          </form>
         </main>
       </SimpleContainer>
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        loading={loading}
+        result={result}
+      />
     </div>
   );
 }
