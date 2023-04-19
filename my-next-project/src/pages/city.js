@@ -77,7 +77,7 @@ export default function Home() {
         <link rel="icon" href="/location.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={"bg-transparent shadow-none text-3xl"} />
+      <NavBar className={"bg-transparent shadow-none text-3xl"} results={false}/>
       <SimpleContainer>
         <main className={styles.main}>
           <h3>Find a city</h3>

@@ -18,7 +18,7 @@ const About = () => {
           background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
         }}
       >
-        <Navbar className={'bg-transparent shadow-none text-3xl'} /> {/* Add the Navbar component */}
+        <Navbar className={'bg-transparent shadow-none text-3xl'} results={false}/> {/* Add the Navbar component */}
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
           <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
             <div className="text-center py-28 lg:py-25">

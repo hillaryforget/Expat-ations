@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link"; // Import Link component from next/link
+import ScrollToColor from "../components/ScrollToColor"
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -51,7 +52,51 @@ function NavBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar className={props.className} component="nav">
+      {props.results === true &&
+      <ScrollToColor>
+        <AppBar className={props.className} component="nav">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <a
+              href="/"
+              style={{
+                flexGrow: "1",
+              }}
+            >
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              >
+                Expat-ations
+              </Typography>
+            </a>
+
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Link
+                  key={item}
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  passHref
+                >
+                  <Button sx={{ color: "#ffd803" }}>{item}</Button>
+                </Link>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </ScrollToColor>
+      }
+      {props.results === false &&
+        <AppBar className={props.className} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -90,6 +135,8 @@ function NavBar(props) {
           </Box>
         </Toolbar>
       </AppBar>
+      }
+      
       <Box component="nav">
         <Drawer
           container={container}

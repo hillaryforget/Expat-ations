@@ -101,7 +101,7 @@ export default function Main(props) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={'bg-transparent shadow-none text-3xl'} /> {/*Add the Navbar component*/}
+      <NavBar className={'bg-transparent shadow-none text-3xl'} results={true} /> {/*Add the Navbar component*/}
       {screen === "loading" && <Loading />}
   
       {screen !== "loading" && (
