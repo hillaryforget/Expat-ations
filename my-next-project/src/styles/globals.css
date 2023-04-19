@@ -48,10 +48,6 @@ html {
   border-radius: 8px;
 }
 
-.modalRight {
-  width: 100%;
-}
-
 .closeBtn {
   position: fixed;
   top: 8px;
