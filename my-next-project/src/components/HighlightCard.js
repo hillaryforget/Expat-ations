@@ -22,7 +22,7 @@ export default function HiglightCard({city,cityName}) {
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-80 w-full flex flex-col pt-10 p-4 mb-6">
       <div className=" flex justify-center text-4xl">
-        <h1>{cityName} scores high:</h1>
+        <h1>{cityName} highlights:</h1>
       </div>
       <div className="flex justify-center">
         <div className="w-1/2 h-full flex flex-col justify-around mt-5 pl-3">
@@ -41,32 +41,4 @@ export default function HiglightCard({city,cityName}) {
     </div>
   );
 
-
-  // return (
-  //   <>
-  //     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-row p-4 mb-6">
-  //       <div className='h-80 w-80'>
-  //         <img className='h-full w-full' src='highlight.svg' alt=''/>
-  //       </div>
-  //       <div className="flex h-full">
-  //         {/* <div className="flex w-1/2 items-center pb-5">
-  //           <DoughnutGraph className="h-full w-full" cityScores={city}/>
-  //         </div> */}
-  //         <div className="w-1/2">
-  //           <br/>
-  //           <h1> {cityName} scores high on the following: </h1>
-  //           <br/>
-  //           <ul>
-  //             {printResult.map(el => (
-  //               <li>
-  //                 <br/>
-  //                 {el}
-  //               </li>
-  //               ))}
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </>
-  // );
 }
