@@ -20,7 +20,6 @@ function SimpleContainer(props) {
 }
 
 export default function Home() {
-  const [gender, setGender] = useState("man");
   const [age, setAge] = useState(30);
   const [budgetMin, setBudgetMin] = useState(100);
   const [budgetMax, setBudgetMax] = useState(10000);
@@ -76,16 +75,6 @@ export default function Home() {
         <main className={styles.main}>
           <h3>Find a city</h3>
           <form onSubmit={onSubmit}>
-            <label>Gender?</label>
-            <select
-              name="gender"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            >
-              <option value="man">Man</option>
-              <option value="woman">Woman</option>
-            </select>
-
             <label>Age</label>
             <input
               type="number"

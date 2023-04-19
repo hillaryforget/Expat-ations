@@ -20,6 +20,6 @@ export default async function (req, res) {
   res.status(200).json({ result: completion.data.choices[0].text });
 }
 
-function generatePrompt(budgetMin, budgetMax, gender, age, activity) {
-  return `suggest 5 cities to travel with minimum budget of ${budgetMin}$ and max budget of ${budgetMax}$ for ${gender} who is ${age} years old and likes ${activity}`;
+function generatePrompt(budgetMin, budgetMax, age, activity) {
+  return `suggest 5 cities to travel with minimum budget of ${budgetMin}$ and max budget of ${budgetMax}$ who is ${age} years old and likes ${activity}`;
 }
