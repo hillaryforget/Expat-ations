@@ -61,10 +61,6 @@ export default function Home({ city_list }) {
           </div>
         </div>
       </div>
-
-      <div className="flex flex-row justify-center">
-        <CurrencyConverter />
-      </div>
       <Footer />
     </>
   );

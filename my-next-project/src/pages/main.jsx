@@ -9,6 +9,7 @@ import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
 import HighlightCard from "../components/HighlightCard";
 import RentCard from '../components/RentCard';
+import CurrencyConverter from "../components/CurrencyConverter";
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
@@ -161,6 +162,10 @@ export default function Main(props) {
           </div>
         </div>
       )}
+      <br></br>
+      <div className="flex flex-row justify-center">
+        <CurrencyConverter />
+      </div>
       <Footer />
     </>
   );
