@@ -1,5 +1,4 @@
 import * as React from 'react';
-import DoughnutGraph from './DoughnutGraph';
 
 export default function HiglightCard({city,cityName}) {
   
@@ -28,17 +27,14 @@ export default function HiglightCard({city,cityName}) {
         <div className="w-1/2 h-full flex flex-col justify-around mt-5 pl-3">
           {printResult.map(el => (
             <ul
-            className="text-center text-2xl" 
-            style={{ background: `#ffd803`}}
-            
+              className="text-center text-2xl" 
+              style={{ background: `#ffd803`}}
             >
-                  {el}
+              {el}
             </ul>
           ))}          
         </div>
-
       </div>
     </div>
   );
-
 }
