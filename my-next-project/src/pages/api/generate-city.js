@@ -6,8 +6,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  const { budgetMin, budgetMax, gender, age, activity } = req.body;
-  const prompt = generatePrompt(budgetMin, budgetMax, gender, age, activity);
+  const { budgetMin, budgetMax, age, activity } = req.body;
+  const prompt = generatePrompt(budgetMin, budgetMax, age, activity);
   console.log(prompt);
 
   const completion = await openai.createCompletion({
