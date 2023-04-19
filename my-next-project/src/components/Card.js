@@ -4,7 +4,7 @@ export default function Card(props) {
   const [name, image, summary] = [props.name, props.image, props.summary]
   
   return (
-    <div className="rounded-xl shadow-lg bg-[#fffffe] h-full w-full mt-16 mb-6">
+    <div className="rounded-xl shadow-lg bg-[#fffffe] h-[28rem] w-full mt-16 mb-6">
        <div className="flex flex-col">
         <div className="rounded-t-xl overflow-hidden">
            <img src={image} alt="" />
