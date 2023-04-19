@@ -1,11 +1,9 @@
 import Head from "next/head";
-import HeroSection from "../components/HeroSection"
+import HeroSection from "../components/HeroSection";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import CurrencyConverter from "../components/CurrencyConverter";
-
-import SearchField from "../components/SearchField"; 
 
 export async function getStaticProps() {
   const cities = [];
@@ -22,10 +20,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ city_list }) {
-
-  const navigate = () => {
-
-  }
+  const navigate = () => {};
 
   return (
     <>
@@ -36,7 +31,10 @@ export default function Home({ city_list }) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={"bg-transparent shadow-none text-3xl"} results={false}/>
+      <NavBar
+        className={"bg-transparent shadow-none text-3xl"}
+        results={false}
+      />
 
       <HeroSection />
 
@@ -46,21 +44,25 @@ export default function Home({ city_list }) {
           background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
         }}
       >
-          <div className="flex m-auto">
-
-            <div className=" p-3">
-              <h1 className="text-5xl font-bold mb-5 text-center">Where will you go?</h1>
-              <p className="pb-5 text-xl text-center">Select the cities you want to compare to gain more insight on your next destination.</p>
-              <p className="pb-5 text-xl text-center">Not sure what city is for you? Explore to view suggested cities based on your needs.</p>
-              <Heading cities={city_list} />
-            </div>
+        <div className="flex m-auto">
+          <div className=" p-3">
+            <h1 className="text-5xl font-bold mb-5 text-center">
+              Where will you go?
+            </h1>
+            <p className="pb-5 text-xl text-center">
+              Select the cities you want to compare to gain more insight on your
+              next destination.
+            </p>
+            <p className="pb-5 text-xl text-center">
+              Not sure what city is for you? Explore to view suggested cities
+              based on your needs.
+            </p>
+            <Heading cities={city_list} />
           </div>
-
- 
-        
+        </div>
       </div>
 
-      <div class="flex flex-row justify-center">
+      <div className="flex flex-row justify-center">
         <CurrencyConverter />
       </div>
       <Footer />
