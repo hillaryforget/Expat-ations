@@ -1,57 +1,59 @@
-import NavBar from '../components/NavBar';
-import Footer from "../components/Footer"; 
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import Card from "../components/Card";
 import Head from "next/head";
-import { useRouter } from 'next/router' 
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
 import HighlightCard from "../components/HighlightCard";
-import RentCard from '../components/RentCard';
+import RentCard from "../components/RentCard";
 import CurrencyConverter from "../components/CurrencyConverter";
 
 export async function getServerSideProps(context) {
-  let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
-  let query_two = context.query.city2.replace(/[,.]/g, '').toLowerCase();
-  query_one = query_one.replace(/\s+/, '-')
-  query_two = query_two.replace(/\s+/, '-')
+  let query_one = context.query.city1.replace(/[,.]/g, "").toLowerCase();
+  let query_two = context.query.city2.replace(/[,.]/g, "").toLowerCase();
+  query_one = query_one.replace(/\s+/, "-");
+  query_two = query_two.replace(/\s+/, "-");
 
-  const cityOneName = context.query.city1
-  const cityTwoName = context.query.city2
+  const cityOneName = context.query.city1;
+  const cityTwoName = context.query.city2;
+  const apiBaseUrl = "https://api.teleport.org/api/urban_areas/slug";
 
   //#region BASE LEVEL OF INFORMATION (name, continent,mayor, etc) //
-  const res_city_one = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/`);
+  const res_city_one = await fetch(`${apiBaseUrl}:${query_one}/`);
   const data_city_one = await res_city_one.json();
 
-  const res_city_two = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_two}/`);
+  const res_city_two = await fetch(`${apiBaseUrl}:${query_two}/`);
   const data_city_two = await res_city_two.json();
   //#endregion
 
   //#region IMAGE INFORMATION (web-link, mobile-link, attributions, etc) //
-  const res_city_one_img = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/images`);
+  const res_city_one_img = await fetch(`${apiBaseUrl}:${query_one}/images`);
   const data_city_one_img = await res_city_one_img.json();
 
-  const res_city_two_img = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_two}/images`);
+  const res_city_two_img = await fetch(`${apiBaseUrl}:${query_two}/images`);
   const data_city_two_img = await res_city_two_img.json();
   //#endregion
 
   //#region SCORE INFORMATION (Housing score, COL score, summary, etc) //
-  const res_city_one_score = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/scores/`);
+  const res_city_one_score = await fetch(`${apiBaseUrl}:${query_one}/scores/`);
   const data_city_one_score = await res_city_one_score.json();
 
-  const res_city_two_score = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_two}/scores`);
-  const data_city_two_score = await res_city_two_score.json();
+  let res_city_two_score = fetch(`${apiBaseUrl}:${query_two}/scores`);
   //#endregion
 
   //#region DETAILS INFORMATION (Weather, crime rate, cost of products, etc) //
-  const res_city_one_det = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_one}/details`);
+  const res_city_one_det = await fetch(`${apiBaseUrl}:${query_one}/details`);
   const data_city_one_det = await res_city_one_det.json();
 
-  const res_city_two_det = await fetch(`https://api.teleport.org/api/urban_areas/slug:${query_two}/details`);
+  const res_city_two_det = await fetch(`${apiBaseUrl}:${query_two}/details`);
   const data_city_two_det = await res_city_two_det.json();
   //#endregion
-  
+  res_city_two_score = await res_city_two_score;
+  const data_city_two_score = await res_city_two_score.json();
+
   return {
     props: {
       city_one: data_city_one,
@@ -63,17 +65,27 @@ export async function getServerSideProps(context) {
       city_one_det: data_city_one_det,
       city_two_det: data_city_two_det,
       city_one_name: cityOneName,
-      city_two_name: cityTwoName
+      city_two_name: cityTwoName,
     }, // will be passed to the page component as props
-  }
+  };
 }
 
 export default function Main(props) {
-
-  const [screen, setScreen] = useState('loading2')
-
-  const router = useRouter()
-  const query = router.query
+  const [screen, setScreen] = useState("loading2");
+  const {
+    city_one,
+    city_two,
+    city_one_img,
+    city_two_img,
+    city_one_score,
+    city_two_score,
+    city_one_name,
+    city_two_name,
+    city_one_det,
+    city_two_det,
+  } = props;
+  const router = useRouter();
+  const query = router.query;
 
   console.log(props.city_one_name);
 
@@ -91,9 +103,7 @@ export default function Main(props) {
   // console.log("City Two Details", props.city_two_det);
   //#endregion
 
-  useEffect(()=>{
-
-  },[])
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -102,60 +112,57 @@ export default function Main(props) {
         <link rel="icon" href="/plane-solid.svg" />
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <NavBar className={'bg-transparent shadow-none text-3xl'} results={true} /> {/*Add the Navbar component*/}
+      <NavBar
+        className={"bg-transparent shadow-none text-3xl"}
+        results={true}
+      />{" "}
+      {/*Add the Navbar component*/}
       {screen === "loading" && <Loading />}
-  
       {screen !== "loading" && (
         <div
-        className="min-h-screen bg-fixed bg-center bg-cover"
-        style={{
-          background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
-        }}
-      >
+          className="min-h-screen bg-fixed bg-center bg-cover"
+          style={{
+            background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+          }}
+        >
           <div className="w-full">
             <div className="pt-6">
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <Card
-                  name={props.city_one.full_name}
-                  image={props.city_one_img.photos[0].image.web}
-                  summary={props.city_one_score.summary}
+                  name={city_one.full_name}
+                  image={city_one_img.photos[0].image.web}
+                  summary={city_one_score.summary}
                 />
                 <Card
-                  name={props.city_two.full_name}
-                  image={props.city_two_img.photos[0].image.web}
-                  summary={props.city_two_score.summary}
+                  name={city_two.full_name}
+                  image={city_two_img.photos[0].image.web}
+                  summary={city_two_score.summary}
                 />
               </div>
-  
+
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
-                <HighlightCard
-                  city={props.city_one_score}
-                  cityName={props.city_one_name}
-                />
-                <HighlightCard
-                  city={props.city_two_score}
-                  cityName={props.city_two_name}
-                />
+                <HighlightCard city={city_one_score} cityName={city_one_name} />
+                <HighlightCard city={city_two_score} cityName={city_two_name} />
               </div>
-  
+
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
-                <RentCard city_data={props.city_one_det.categories} />
-                <RentCard city_data={props.city_two_det.categories} />
+                <RentCard city_data={city_one_det.categories} />
+                <RentCard city_data={city_two_det.categories} />
               </div>
-  
+
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
-                <ColCard city_data={props.city_one_det.categories} />
-                <ColCard city_data={props.city_two_det.categories} />
+                <ColCard city_data={city_one_det.categories} />
+                <ColCard city_data={city_two_det.categories} />
               </div>
             </div>
-  
+
             <div className="mx-4">
               <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl max-w-7xl mx-auto">
                 <BarGraph
-                  city1={props.city_one_score}
-                  city2={props.city_two_score}
-                  city1Name={props.city_one_name}
-                  city2Name={props.city_two_name}
+                  city1={city_one_score}
+                  city2={city_two_score}
+                  city1Name={city_one_name}
+                  city2Name={city_two_name}
                 />
               </div>
             </div>
@@ -169,4 +176,4 @@ export default function Main(props) {
       <Footer />
     </>
   );
-}   
+}
