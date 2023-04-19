@@ -22,37 +22,47 @@ export async function getServerSideProps(context) {
   const apiBaseUrl = "https://api.teleport.org/api/urban_areas/slug";
 
   //#region BASE LEVEL OF INFORMATION (name, continent,mayor, etc) //
-  const res_city_one = await fetch(`${apiBaseUrl}:${query_one}/`);
-  const data_city_one = await res_city_one.json();
-
-  const res_city_two = await fetch(`${apiBaseUrl}:${query_two}/`);
-  const data_city_two = await res_city_two.json();
+  let res_city_one = fetch(`${apiBaseUrl}:${query_one}/`);
+  let res_city_two = fetch(`${apiBaseUrl}:${query_two}/`);
+  
   //#endregion
 
   //#region IMAGE INFORMATION (web-link, mobile-link, attributions, etc) //
-  const res_city_one_img = await fetch(`${apiBaseUrl}:${query_one}/images`);
-  const data_city_one_img = await res_city_one_img.json();
-
-  const res_city_two_img = await fetch(`${apiBaseUrl}:${query_two}/images`);
-  const data_city_two_img = await res_city_two_img.json();
+  let res_city_one_img = fetch(`${apiBaseUrl}:${query_one}/images`);
+  let res_city_two_img = fetch(`${apiBaseUrl}:${query_two}/images`);
+  
   //#endregion
 
   //#region SCORE INFORMATION (Housing score, COL score, summary, etc) //
-  const res_city_one_score = await fetch(`${apiBaseUrl}:${query_one}/scores/`);
-  const data_city_one_score = await res_city_one_score.json();
-
+  let res_city_one_score = fetch(`${apiBaseUrl}:${query_one}/scores/`);
   let res_city_two_score = fetch(`${apiBaseUrl}:${query_two}/scores`);
+
   //#endregion
 
   //#region DETAILS INFORMATION (Weather, crime rate, cost of products, etc) //
-  const res_city_one_det = await fetch(`${apiBaseUrl}:${query_one}/details`);
-  const data_city_one_det = await res_city_one_det.json();
+  let res_city_one_det = fetch(`${apiBaseUrl}:${query_one}/details`);
+  let res_city_two_det = fetch(`${apiBaseUrl}:${query_two}/details`);
 
-  const res_city_two_det = await fetch(`${apiBaseUrl}:${query_two}/details`);
-  const data_city_two_det = await res_city_two_det.json();
   //#endregion
+
+  res_city_one = await res_city_one;
+  res_city_two = await res_city_two;
+  res_city_one_img = await res_city_one_img;
+  res_city_two_img = await res_city_two_img;
+  res_city_one_score = await res_city_one_score;
   res_city_two_score = await res_city_two_score;
+  res_city_one_det = await res_city_one_det;
+  res_city_two_det = await res_city_two_det;
+  
+
+  const data_city_one = await res_city_one.json();
+  const data_city_two = await res_city_two.json();
+  const data_city_one_img = await res_city_one_img.json();
+  const data_city_two_img = await res_city_two_img.json();
+  const data_city_one_score = await res_city_one_score.json();
   const data_city_two_score = await res_city_two_score.json();
+  const data_city_one_det = await res_city_one_det.json();
+  const data_city_two_det = await res_city_two_det.json();
 
   return {
     props: {
