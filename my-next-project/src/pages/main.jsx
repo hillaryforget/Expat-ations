@@ -9,6 +9,8 @@ import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
 import HighlightCard from "../components/HighlightCard";
 import RentCard from '../components/RentCard';
+import WeatherCard from '../components/WeatherCard';
+import TransportationCard from '../components/TransportationCard';
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
@@ -136,6 +138,26 @@ export default function Main(props) {
                   cityName={props.city_two_name}
                 />
               </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <WeatherCard 
+                  cityName={props.city_one_name}
+                /> 
+                <WeatherCard 
+                  cityName={props.city_two_name}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <TransportationCard 
+                  cityName={props.city_one_name}
+                /> 
+                <TransportationCard 
+                  cityName={props.city_two_name}
+                />                 
+              </div>
+
+
   
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <RentCard city_data={props.city_one_det.categories} />
