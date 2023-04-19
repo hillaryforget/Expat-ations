@@ -73,7 +73,9 @@ export default function Home() {
     >
       <Head>
         <title>Expat-ations</title>
+        <meta name="description" content="Cities" />
         <link rel="icon" href="/location.svg" />
+        <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <NavBar className={"bg-transparent shadow-none text-3xl"} />
       <SimpleContainer>
