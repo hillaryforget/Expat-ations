@@ -58,13 +58,15 @@ export default function WeatherCard({cityName, climate}){
           <h1>{cityName} Weather Type</h1>
         </div>
         { weatherType!== null &&
-            <div className='w-full h-full'>
-              <div className=' w-1/3 flex items-center p-5'>
-                <img className=" " src='weather.png' />
+            <div className='w-full h-full flex flex-col justify-center align-middle items-center'>
+              <div className=' w-1/3 '>
+                <img className="  " src='weather.png' />
               </div>
                 <br/>
                 <div className="flex flex-col items-center">
-                  <p className='text-xl'><b>{weatherType.string_value}</b></p>
+                  <p className='text-xl'>
+                    <b>{weatherType.string_value}</b>  
+                  </p>
                 </div> 
             </div>
           }
