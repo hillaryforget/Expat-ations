@@ -142,11 +142,9 @@ export default function Home({ city_list }) {
                 value={activity}
                 onChange={(e) => setActivity(e.target.value)}
               />
-              <input
-                type="submit"
-                value="Suggest"
-                onClick={() => setOpenModal(true)}
-              />
+              <button onClick={() => setOpenModal(true)} type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Suggest
+                </button>
             </form>
           </main>
         </SimpleContainer>
