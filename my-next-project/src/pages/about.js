@@ -22,7 +22,7 @@ const About = () => {
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
           <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
           <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
-            <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
+            <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-14">
               About Us
             </h1>
               <img
@@ -30,7 +30,7 @@ const About = () => {
                 src="Expat-ations (2).png"
                 alt="Expat-ations"
                 style={{
-                  maxWidth: '50%',
+                  maxWidth: '40%',
                   borderRadius: '8px',
                   width: '800px', // Increase the width
                   height: 'auto', // Maintain aspect ratio
