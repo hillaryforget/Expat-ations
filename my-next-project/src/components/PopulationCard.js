@@ -32,11 +32,6 @@ export default function PopulationCard({cityName, population}){
   const medianAge = findData(age, 'MEDIAN-AGE');
   const populationSize = findData(populationInfo, "POPULATION-SIZE");
 
-  // console.log(`+++ ${Object.values(elderlyPeople)}`)
-  // console.log(`@@@ ${Object.values(lifeExpectancy)}`)
-  // console.log(`=== ${Object.values(medianAge)}`)
-  // console.log(`444 ${Object.values(populationSize)}`)
-
   return(
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-80 w-full flex flex-col pt-6 p-4 mb-6">
       <div className=" w-full h-full flex justify-center text-2xl">

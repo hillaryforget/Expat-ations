@@ -14,6 +14,7 @@ import TransportationCard from '../components/TransportationCard';
 import HealthcareCard from '../components/HealthcareCard';
 import PopulationCard from '../components/PopulationCard';
 import SafetyCard from '../components/SafetyCard';
+import CurrencyConverter from '../components/CurrencyConverter'; 
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, "").toLowerCase();

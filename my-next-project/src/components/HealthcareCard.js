@@ -55,13 +55,11 @@ export default function HealthcareCard({cityName, health}){
             > 
             Excellent
             </h1>          
-          }                 
+          } 
+        <br/>                
+        <p> *scored {Math.round(score * 100)} out of 100 </p>
         </div>
       </div>
-      <div className="flex justify-center"> 
-        <p> *scored {Math.round(score * 100)} out of 100 </p>
-      </div>
-
     </div>
   )
 }
