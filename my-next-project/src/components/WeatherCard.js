@@ -42,41 +42,54 @@ export default function WeatherCard({cityName, climate}){
       <div className="flex justify-center pt-20">
         { dayLength!== null &&
           <div className='w-1/3'>
-            <img className="h-20 w-auto" src='sunrise.png' />
+            <div className='w-full h-20 flex justify-center'>
+              <img className="h-20 w-auto" src='sunrise.png' />
+            </div>
               <br/>
-              <div className="">
-                <p><b>{dayLength.float_value} hrs</b></p>
-                <p className='break-words text-sm'>{dayLength.label} </p>
+              <div className="flex flex-col items-center">
+                <p className='text-xl'><b>{dayLength.float_value} hrs</b></p>
+                <p>Average day</p>
+                <p>length</p>
               </div> 
           </div>
         }
         { rainyDays!== null &&
           <div className='w-1/3'>
-            <img className="h-20 w-auto" src='rainy.png' />
-              <br/>
-              <div className="flex flex-col justify-center">
-                <p><b>{rainyDays.float_value} days</b></p>
-                <p className='break-words text-sm'>{rainyDays.label} </p>
+            <div className='w-full h-20 flex justify-center'>
+              <img className="h-full w-auto" src='rainy.png' />
+            </div> 
+            <br/>
+            <div className="flex flex-col items-center">
+                <p className='text-xl'><b>{rainyDays.float_value} days</b></p>
+                <p> Average number</p>
+                <p> of rainy days</p>
+                <p> per year</p>
               </div> 
           </div>
         }        
         { avgHigh!== null &&
           <div className='w-1/3'>
-            <img className="h-20 w-auto" src='hot.png' />
-              <br/>
-              <div className="flex flex-col justify-center">
-                <p><b>{avgHigh.string_value}°C</b></p>
-                <p className='break-words text-sm'>{avgHigh.label} </p>
-              </div> 
+            <div className='w-full h-20 flex justify-center'>
+              <img className="h-full w-auto" src='hot.png' />
+            </div>
+            <br/>
+            <div className="flex flex-col items-center">
+              <p className='text-xl'><b>{avgHigh.string_value}°C</b></p>
+              <p>Average high</p>
+              <p>temperature</p>
+            </div> 
           </div>
         }
         { avgLow!== null &&
           <div className='w-1/3'>
-          <img className="h-20 w-auto" src='cold.png' />
-            <br/>
-            <div className="flex flex-col justify-center">
-              <p><b>{avgLow.string_value}°C</b></p>
-              <p className='break-words text-sm'>{avgLow.label} </p>
+          <div className='w-full h-20 flex justify-center'>
+            <img className="h-full w-auto" src='cold.png' />
+          </div>
+          <br/>
+            <div className="flex flex-col items-center">
+              <p className='text-xl'><b>{avgLow.string_value}°C</b></p>
+              <p> Average low</p>
+              <p> temperature</p>
             </div> 
           </div>
         }
