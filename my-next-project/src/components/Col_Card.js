@@ -83,7 +83,7 @@ export default function Col_Card(props) {
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col pt-4 pl-4 pr-4 mb-6">
       <div className="flex flex-row h-full">
-        <div className="w-2/5 h-full">
+        {/* <div className="w-4/12 h-full">
           {currentIndex === 'Groceries' &&
           <img className="w-full h-full" src="groceries.svg" />
           }
@@ -93,8 +93,8 @@ export default function Col_Card(props) {
           {currentIndex === 'Eating Out' &&
           <img className="w-full h-full" src="restaurant.svg" />
           }
-        </div>
-        <div className="w-3/5 flex justify-center pt-8">
+        </div> */}
+        <div className="w-full flex justify-center pt-8">
         {currentIndex === 'Groceries' &&
           <div className="h-full w-full flex flex-col">
             <div className="flex w-full h-1/5 justify-center items-end">
@@ -184,7 +184,7 @@ export default function Col_Card(props) {
               }
               {dinner !== null &&
               <p className="flex flex-col items-center">
-                <img className="h-16 w-auto" src='supper.png' />
+                <img className="h-16 w-auto" src='dinner.png' />
                 <br/>
                 <span className="text-m">supper date</span>
                 <span className="text-4xl"><b>${Object.values(dinner)[0].toFixed(2)}</b></span>

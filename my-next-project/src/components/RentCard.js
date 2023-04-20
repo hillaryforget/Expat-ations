@@ -30,7 +30,7 @@ export default function RentCard(props) {
         <h1><b>Rent</b></h1>
       </div>
       <div className="flex">
-        <div className="w-1/2 h-full flex flex-col justify-between mt-10 pl-3">
+        <div className="w-2/3 h-full flex flex-col justify-between mt-10 pl-3">
           {smallRent !== null &&
             <div>
               <p className="text-md">
@@ -62,7 +62,7 @@ export default function RentCard(props) {
             </div>
           }
         </div>
-        <div className="w-1/2 h-full">
+        <div className="w-1/3 h-full">
           <div className='h-full w-full mt-6'>
             <img className='h-full w-96' src='rent.svg' alt=''/>
           </div>
