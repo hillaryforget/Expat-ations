@@ -36,7 +36,7 @@ export default function WeatherCard({cityName, climate}){
 
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col p-4 mb-6">
-      <div className=" flex justify-center text-4xl">
+      <div className=" flex justify-center text-2xl">
         <h1>{cityName} Weather Trends</h1>
       </div>
       <div className="flex justify-center pt-20">

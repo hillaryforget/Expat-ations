@@ -11,6 +11,9 @@ import HighlightCard from "../components/HighlightCard";
 import RentCard from '../components/RentCard';
 import WeatherCard from '../components/WeatherCard';
 import TransportationCard from '../components/TransportationCard';
+import HealthcareCard from '../components/HealthcareCard';
+import PopulationCard from '../components/PopulationCard';
+import SafetyCard from '../components/SafetyCard';
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, '').toLowerCase();
@@ -156,6 +159,40 @@ export default function Main(props) {
                   // climate={props.city_one_det}
                 /> 
                 <TransportationCard 
+                  cityName={props.city_two_name}
+                  // climate={props.city_two_det}
+                />                 
+              </div>
+
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <HealthcareCard
+                  cityName={props.city_one_name}
+                  // climate={props.city_one_det}
+                /> 
+                <HealthcareCard
+                  cityName={props.city_two_name}
+                  // climate={props.city_two_det}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <PopulationCard
+                  cityName={props.city_one_name}
+                  // climate={props.city_one_det}
+                /> 
+                <PopulationCard
+                  cityName={props.city_two_name}
+                  // climate={props.city_two_det}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <SafetyCard
+                  cityName={props.city_one_name}
+                  // climate={props.city_one_det}
+                /> 
+                <SafetyCard
                   cityName={props.city_two_name}
                   // climate={props.city_two_det}
                 />                 
