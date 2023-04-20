@@ -89,7 +89,7 @@ export default function PopulationCard({cityName, population}){
             </div>
               <br/>
               <div className="flex flex-col items-center">
-                <p className='text-xl'><b>{populationSize.float_value}</b></p>
+                <p className='text-xl'><b>{Math.round(populationSize.float_value)}</b></p>
                 <p>Urban area</p>
                 <p>population</p>
                 <p>(millions)</p>
