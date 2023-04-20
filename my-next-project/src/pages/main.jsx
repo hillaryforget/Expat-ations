@@ -156,11 +156,11 @@ export default function Main(props) {
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <TransportationCard 
                   cityName={props.city_one_name}
-                  // climate={props.city_one_det}
+                  transportation={props.city_one_det.categories}
                 /> 
                 <TransportationCard 
                   cityName={props.city_two_name}
-                  // climate={props.city_two_det}
+                  transportation={props.city_two_det.categories}
                 />                 
               </div>
 

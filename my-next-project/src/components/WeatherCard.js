@@ -50,13 +50,6 @@ export default function WeatherCard({cityName, climate}){
     setNextTitle(nextIndex);
   }
 
-  // console.log(`+++: ${Object.values(DayLength)}`)
-  // console.log(`+++: ${Object.values(rainyDays)}`)
-  // console.log(`+++: ${Object.values(avgHigh)}`)
-  // console.log(`+++: ${Object.values(avgLow)}`)
-  // console.log(`+++: ${Object.values(sunshine)}`)
-  // console.log(`+++: ${Object.values(weatherType)}`)
-
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col p-4 mb-6">
       { currentIndex === "Weather Type" &&
