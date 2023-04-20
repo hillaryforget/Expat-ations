@@ -1,7 +1,5 @@
 import React from "react";
-import Loading from "./Loading";
 import CircularStatic from "./Circleloading";
-import styles from "src/styles/modal.module.css";
 
 const Modal = ({ open, onClose, loading, result }) => {
   if (!open) return null;
@@ -25,12 +23,7 @@ const Modal = ({ open, onClose, loading, result }) => {
                 <CircularStatic />
               </div>
             )}
-            {result && (
-              <div
-                className={styles.result}
-                dangerouslySetInnerHTML={{ __html: result }}
-              />
-            )}
+            {result && <div dangerouslySetInnerHTML={{ __html: result }} />}
           </div>
           <div className="btnContainer">
             <button className="btnPrimary" onClick={onClose}>
