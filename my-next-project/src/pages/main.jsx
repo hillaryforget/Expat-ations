@@ -8,8 +8,12 @@ import Loading from "../components/Loading";
 import BarGraph from "../components/BarGraph";
 import ColCard from "../components/Col_Card";
 import HighlightCard from "../components/HighlightCard";
-import RentCard from "../components/RentCard";
-import CurrencyConverter from "../components/CurrencyConverter";
+import RentCard from '../components/RentCard';
+import WeatherCard from '../components/WeatherCard';
+import TransportationCard from '../components/TransportationCard';
+import HealthcareCard from '../components/HealthcareCard';
+import PopulationCard from '../components/PopulationCard';
+import SafetyCard from '../components/SafetyCard';
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, "").toLowerCase();
@@ -155,6 +159,65 @@ export default function Main(props) {
                 <HighlightCard city={city_two_score} cityName={city_two_name} />
               </div>
 
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <WeatherCard 
+                  cityName={props.city_one_name}
+                  climate={props.city_one_det.categories}
+                /> 
+                <WeatherCard 
+                  cityName={props.city_two_name}
+                  climate={props.city_two_det.categories}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <TransportationCard 
+                  cityName={props.city_one_name}
+                  transportation={props.city_one_det.categories}
+                /> 
+                <TransportationCard 
+                  cityName={props.city_two_name}
+                  transportation={props.city_two_det.categories}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <HealthcareCard
+                  cityName={props.city_one_name}
+                  health={props.city_one_det.categories}
+                /> 
+                <HealthcareCard
+                  cityName={props.city_two_name}
+                  health={props.city_two_det.categories}
+                />                 
+              </div>
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <PopulationCard
+                  cityName={props.city_one_name}
+                  population ={props.city_one_det.categories}
+                /> 
+                <PopulationCard
+                  cityName={props.city_two_name}
+                  population={props.city_two_det.categories}
+                />                 
+              </div>
+
+
+
+              <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
+                <SafetyCard
+                  cityName={props.city_one_name}
+                  safety={props.city_one_det.categories}
+                /> 
+                <SafetyCard
+                  cityName={props.city_two_name}
+                  safety={props.city_two_det.categories}
+                />                 
+              </div>
+
+
+  
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <RentCard city_data={city_one_det.categories} />
                 <RentCard city_data={city_two_det.categories} />
