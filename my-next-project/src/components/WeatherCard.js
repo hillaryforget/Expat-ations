@@ -61,7 +61,20 @@ export default function WeatherCard({cityName, climate}){
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col p-4 mb-6">
       { currentIndex === "Weather Type" &&
       <>
-      <p> Hello! </p>
+        <div className=" flex justify-center text-2xl">
+          <h1>{cityName} Weather Type</h1>
+        </div>
+        { weatherType!== null &&
+            <div className='w-full h-full'>
+              <div className=' w-1/3 flex items-center p-5'>
+                <img className=" " src='weather.png' />
+              </div>
+                <br/>
+                <div className="flex flex-col items-center">
+                  <p className='text-xl'><b>{weatherType.string_value}</b></p>
+                </div> 
+            </div>
+          }
       </>
 
       }
@@ -70,7 +83,7 @@ export default function WeatherCard({cityName, climate}){
         <div className=" flex justify-center text-2xl">
           <h1>{cityName} Weather Trends</h1>
         </div>
-        <div className="flex justify-center pt-10">
+        <div className="flex justify-center pt-10 h-full">
           { dayLength!== null &&
             <div className='w-1/3'>
               <div className='w-full h-20 flex justify-center'>
