@@ -42,7 +42,7 @@ export default function HealthcareCard({cityName, health}){
           } 
           {score < 0.8 && score > 0.6 &&
             <h1 
-            className="text-4xl text-center w-full text-white"
+            className="text-4xl text-center w-full text-black"
             style={{ background: `yellow`}}
             > 
             Moderate

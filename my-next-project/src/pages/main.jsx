@@ -163,7 +163,7 @@ export default function Main(props) {
                   transportation={props.city_two_det.categories}
                 />                 
               </div>
-              
+
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <HealthcareCard
                   cityName={props.city_one_name}
@@ -191,11 +191,11 @@ export default function Main(props) {
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <SafetyCard
                   cityName={props.city_one_name}
-                  // climate={props.city_one_det}
+                  safety={props.city_one_det.categories}
                 /> 
                 <SafetyCard
                   cityName={props.city_two_name}
-                  // climate={props.city_two_det}
+                  safety={props.city_two_det.categories}
                 />                 
               </div>
 
