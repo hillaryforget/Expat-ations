@@ -20,6 +20,7 @@ function findData(city_det, string) {
 
 export default function Col_Card(props) {
   const city_det = findCostOfLiving(props.city_data);
+  const name = props.name;
 
   const apples = findData(city_det, 'COST-APPLES');
   const bread = findData(city_det, 'COST-BREAD');
@@ -32,7 +33,7 @@ export default function Col_Card(props) {
 
   const [currentIndex, setCurrentIndex] = useState('Groceries');
   const [nextTitle, setNextTitle] = useState('Activities');
-  const [prevTitle, setPrevTitle] = useState('Eating Out');
+  const [prevTitle, setPrevTitle] = useState('Dining Out');
 
   const nextSlide = (currentIndex) => {
     let slideIndex = '';
@@ -41,13 +42,13 @@ export default function Col_Card(props) {
     switch(currentIndex) {
       case 'Groceries':
         slideIndex = 'Activities';
-        nextIndex = 'Eating Out';
+        nextIndex = 'Dining Out';
         break;
       case 'Activities':
-        slideIndex = 'Eating Out';
+        slideIndex = 'Dining Out';
         nextIndex = 'Groceries';
         break;
-      case 'Eating Out':
+      case 'Dining Out':
         slideIndex = 'Groceries';
         nextIndex = 'Activities';
     }
@@ -63,14 +64,14 @@ export default function Col_Card(props) {
 
     switch(currentIndex) {
       case 'Groceries':
-        slideIndex = 'Eating Out';
+        slideIndex = 'Dining Out';
         prevIndex = 'Activities';
         break;
       case 'Activities':
         slideIndex = 'Groceries';
-        prevIndex = 'Eating Out';
+        prevIndex = 'Dining Out';
         break;
-      case 'Eating Out':
+      case 'Dining Out':
         slideIndex = 'Activities';
         prevIndex = 'Groceries';
     }
@@ -81,7 +82,7 @@ export default function Col_Card(props) {
   }
 
   return (
-    <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col pt-4 pl-4 pr-4 mb-6">
+    <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col px-5 mb-6">
       <div className="flex flex-row h-full">
         {/* <div className="w-4/12 h-full">
           {currentIndex === 'Groceries' &&
@@ -90,7 +91,7 @@ export default function Col_Card(props) {
           {currentIndex === 'Activities' &&
           <img className="w-full h-full" src="workout.svg" />
           }
-          {currentIndex === 'Eating Out' &&
+          {currentIndex === 'Dining Out' &&
           <img className="w-full h-full" src="restaurant.svg" />
           }
         </div> */}
@@ -98,9 +99,9 @@ export default function Col_Card(props) {
         {currentIndex === 'Groceries' &&
           <div className="h-full w-full flex flex-col">
             <div className="flex w-full h-1/5 justify-center items-end">
-              <p className="text-4xl"><b>Groceries</b></p>
+              <p className="text-4xl">Groceries in {name}</p>
             </div>
-            <div className="flex flex-row justify-evenly pt-5">
+            <div className="flex flex-row justify-evenly pt-8">
               {apples !== null &&
               <p className='flex flex-col items-center'>
                 <img className="h-16 w-auto" src='apple.png' />
@@ -134,9 +135,9 @@ export default function Col_Card(props) {
         {currentIndex === 'Activities' &&
           <div className="h-full w-full flex flex-col">
             <div className="flex w-full h-1/5 justify-center items-end">
-              <p className="text-4xl"><b>Activities</b></p>
+              <p className="text-4xl">Activities to do in {name}</p>
             </div>
-            <div className="flex flex-row justify-evenly pt-5">
+            <div className="flex flex-row justify-evenly pt-8">
               {movies !== null &&
               <p className='flex flex-col items-center'>
                 <img className="h-16 w-auto" src='cinema.png' />
@@ -167,12 +168,12 @@ export default function Col_Card(props) {
             </div>
           </div>
         }
-        {currentIndex === 'Eating Out' &&
+        {currentIndex === 'Dining Out' &&
           <div className="h-full w-full flex flex-col">
             <div className="flex w-full h-1/5 justify-center items-end">
-              <p className="text-4xl"><b>Eating Out</b></p>
+              <p className="text-4xl">Dining Out in {name}</p>
             </div>
-            <div className="flex flex-row justify-evenly pt-5">
+            <div className="flex flex-row justify-evenly pt-8">
               {lunch !== null &&
               <p className='flex flex-col items-center'>
                 <img className="h-16 w-auto pr-5" src='food.png' />
@@ -196,9 +197,13 @@ export default function Col_Card(props) {
         }
         </div>
       </div>
-      <div className="flex flex-row h-1/6 text-2xl items-center justify-between opacity-0 hover:opacity-100">
-        <button onClick={() => prevSlide(currentIndex)}>&lt; {prevTitle}</button>
-        <button onClick={() => nextSlide(currentIndex)}>{nextTitle} &gt;</button>
+      <div className="flex flex-row h-1/6 w-full text-2xl items-center justify-between opacity-0 hover:opacity-100">
+        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300]">
+          <button onClick={() => prevSlide(currentIndex)}>{prevTitle}</button>
+        </div>
+        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300]">
+          <button onClick={() => nextSlide(currentIndex)}>{nextTitle}</button>
+        </div>
       </div>
     </div>
   );

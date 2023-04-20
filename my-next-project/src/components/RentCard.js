@@ -17,8 +17,8 @@ function findData(city_det, string) {
   return null;
 }
 
-export default function RentCard(props) {
-  const city_det = findHousing(props.city_data);
+export default function RentCard({city_data, name}) {
+  const city_det = findHousing(city_data);
 
   const smallRent = findData(city_det, 'APARTMENT-RENT-SMALL');
   const mediumRent = findData(city_det, 'APARTMENT-RENT-MEDIUM');
@@ -26,11 +26,11 @@ export default function RentCard(props) {
   
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col p-4 mb-6">
-      <div className="flex text-3xl w-2/5 justify-center pt-3">
-        <h1><b>Rent</b></h1>
+      <div className="flex text-3xl w-full justify-center pt-3">
+        <h1>{name} Rentals</h1>
       </div>
       <div className="flex">
-        <div className="w-2/3 h-full flex flex-col justify-between mt-10 pl-3">
+        <div className="w-1/2 h-full flex flex-col justify-between mt-10 pl-3">
           {smallRent !== null &&
             <div>
               <p className="text-md">
@@ -62,7 +62,7 @@ export default function RentCard(props) {
             </div>
           }
         </div>
-        <div className="w-1/3 h-full">
+        <div className="w-1/2 h-full">
           <div className='h-full w-full mt-6'>
             <img className='h-full w-96' src='rent.svg' alt=''/>
           </div>

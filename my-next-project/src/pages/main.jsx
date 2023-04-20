@@ -224,13 +224,13 @@ export default function Main(props) {
               </div>
   
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
-                <RentCard city_data={city_one_det.categories} />
-                <RentCard city_data={city_two_det.categories} />
+                <RentCard city_data={city_one_det.categories} name={city_one_name} />
+                <RentCard city_data={city_two_det.categories} name={city_two_name}/>
               </div>
 
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
-                <ColCard city_data={city_one_det.categories} />
-                <ColCard city_data={city_two_det.categories} />
+                <ColCard city_data={city_one_det.categories} name={city_one_name} />
+                <ColCard city_data={city_two_det.categories} name={city_two_name}/>
               </div>
             </div>
 
