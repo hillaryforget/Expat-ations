@@ -50,7 +50,7 @@ export default function PopulationCard({cityName, population}){
             </div>
               <br/>
               <div className="flex flex-col items-center">
-                <p className='text-xl'><b>{elderlyPeople.percent_value * 100}%</b></p>
+                <p className='text-xl'><b>{Math.round(elderlyPeople.percent_value * 1000)}%</b></p>
                 <p>Elderly people</p>
                 <p>(65+ years)</p>
               </div> 
@@ -63,7 +63,7 @@ export default function PopulationCard({cityName, population}){
             </div>
               <br/>
               <div className="flex flex-col items-center">
-                <p className='text-xl'><b>{lifeExpectancy.float_value} yrs</b></p>
+                <p className='text-xl'><b>{Math.round(lifeExpectancy.float_value)} yrs</b></p>
                 <p>Life expectancy</p>
                 <p>at birth </p>
               </div> 
@@ -76,7 +76,7 @@ export default function PopulationCard({cityName, population}){
             </div>
               <br/>
               <div className="flex flex-col items-center">
-                <p className='text-xl'><b>{medianAge.float_value} yrs</b></p>
+                <p className='text-xl'><b>{Math.round(medianAge.float_value)} yrs</b></p>
                 <p>Median age</p>
                 <p>in country</p>
               </div> 
