@@ -32,7 +32,8 @@ export default function HiglightCard({city,cityName}) {
             >
               {el}
             </ul>
-          ))}          
+          ))}
+          {/* <img className=" flex align-center h-auto w-1/3" src='stars.png' />           */}
         </div>
       </div>
     </div>

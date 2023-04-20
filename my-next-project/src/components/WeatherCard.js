@@ -27,7 +27,6 @@ export default function WeatherCard({cityName, climate}){
   const sunshine = findData(weather, 'WEATHER-SUNSHINE-AMOUNT')
   const weatherType = findData(weather, 'WEATHER-TYPE')
 
-
   // console.log(`+++: ${Object.values(DayLength)}`)
   // console.log(`+++: ${Object.values(rainyDays)}`)
   // console.log(`+++: ${Object.values(avgHigh)}`)
