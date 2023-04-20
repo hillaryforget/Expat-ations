@@ -10,6 +10,7 @@ import Modal from "../components/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Heading2 from "../components/Heading2";
+import Footer from "../components/Footer";
 
 export async function getStaticProps() {
   const cities = [];
@@ -73,11 +74,11 @@ export default function Home({ city_list }) {
 
   return (
     <div
-      className="min-h-screen bg-fixed bg-center bg-cover"
-      style={{
-        background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
-      }}
-    >
+        className="min-h-screen bg-fixed bg-center bg-cover"
+        style={{
+          background: `linear-gradient(to bottom, #2d334a, #bae8e8, #e3f6f5)`,
+        }}
+      >
       <Head>
         <title>Expat-ations</title>
         <meta name="description" content="Cities" />
@@ -90,12 +91,17 @@ export default function Home({ city_list }) {
       </Head>
       <NavBar
         className={"bg-transparent shadow-none text-3xl"}
-        results={false}
-      />
+        results={true}
+      />{" "}
+      {/*Add the Navbar component*/}
       <div className="flex flex-row">
         <SimpleContainer>
           <main className={styles.main}>
-            <h3>Find a city</h3>
+          <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
+            <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
+              Find a City
+            </h1>
+            </div>
             <form onSubmit={onSubmit}>
               <label>Age</label>
               <input
@@ -159,7 +165,11 @@ export default function Home({ city_list }) {
         </SimpleContainer>
         <SimpleContainer>
           <main className={styles.main}>
-            <h3>Compare Cities</h3>
+          <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
+            <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
+              Compare Cities
+            </h1>
+            </div>
             <Heading2 cities={city_list} />
           </main>
         </SimpleContainer>
@@ -171,6 +181,7 @@ export default function Home({ city_list }) {
         loading={loading}
         result={result}
       />
+      <Footer />
     </div>
   );
 }
