@@ -155,14 +155,6 @@ export default function Main(props) {
                 />
               </div>
 
-              <div className="w-full flex justify-center mb-6">
-                <div className="w-[78rem] h-96 rounded-2xl">
-                  <div className="h-full w-full rounded-2xl">
-                    <Map city_One={city_one} city_Two={city_two}/>
-                  </div>
-                </div>
-              </div>
-
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <HighlightCard city={city_one_score} cityName={city_one_name} />
                 <HighlightCard city={city_two_score} cityName={city_two_name} />
@@ -235,7 +227,7 @@ export default function Main(props) {
             </div>
 
             <div className="mx-4">
-              <div className="flex gap-4 justify-around h-96 bg-[#fffffe] rounded-xl w-[78rem] mx-auto">
+              <div className="flex gap-4 justify-around h-96 mb-6 bg-[#fffffe] rounded-xl w-[78rem] mx-auto">
                 <BarGraph
                   city1={city_one_score}
                   city2={city_two_score}
@@ -243,6 +235,14 @@ export default function Main(props) {
                   city2Name={city_two_name}
                 />
               </div>
+            </div>
+
+            <div className="w-full flex justify-center mb-6">
+                <div className="w-[78rem] h-96 rounded-2xl">
+                  <div className="h-full w-full rounded-2xl">
+                    <Map city_One={city_one} city_Two={city_two}/>
+                  </div>
+                </div>
             </div>
 
             <div className="flex justify-center bg-[#e3f6f5] mt-6">
