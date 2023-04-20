@@ -14,7 +14,8 @@ import TransportationCard from '../components/TransportationCard';
 import HealthcareCard from '../components/HealthcareCard';
 import PopulationCard from '../components/PopulationCard';
 import SafetyCard from '../components/SafetyCard';
-import CurrencyConverter from '../components/CurrencyConverter'; 
+import CurrencyConverter from '../components/CurrencyConverter';
+import Map from "../components/map";
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, "").toLowerCase();
@@ -118,8 +119,6 @@ export default function Main(props) {
   // console.log("City Two Details", props.city_two_det);
   //#endregion
 
-  useEffect(() => {}, []);
-
   return (
     <>
       <Head>
@@ -142,6 +141,7 @@ export default function Main(props) {
         >
           <div className="w-full">
             <div className="pt-6">
+
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <Card
                   name={city_one.full_name}
@@ -153,6 +153,14 @@ export default function Main(props) {
                   image={city_two_img.photos[0].image.web}
                   summary={city_two_score.summary}
                 />
+              </div>
+
+              <div className="w-full flex justify-center mb-6">
+                <div className="w-[78rem] h-96 rounded-2xl">
+                  <div className="h-full w-full rounded-2xl">
+                    <Map city_One={city_one} city_Two={city_two}/>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
@@ -204,8 +212,6 @@ export default function Main(props) {
                 />                 
               </div>
 
-
-
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <SafetyCard
                   cityName={props.city_one_name}
@@ -216,8 +222,6 @@ export default function Main(props) {
                   safety={props.city_two_det.categories}
                 />                 
               </div>
-
-
   
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <RentCard city_data={city_one_det.categories} />
@@ -231,7 +235,7 @@ export default function Main(props) {
             </div>
 
             <div className="mx-4">
-              <div className="flex flex-row gap-4 justify-around h-96 bg-[#fffffe] rounded-xl max-w-7xl mx-auto">
+              <div className="flex gap-4 justify-around h-96 bg-[#fffffe] rounded-xl w-[78rem] mx-auto">
                 <BarGraph
                   city1={city_one_score}
                   city2={city_two_score}
@@ -240,13 +244,14 @@ export default function Main(props) {
                 />
               </div>
             </div>
+
+            <div className="flex justify-center bg-[#e3f6f5] mt-6">
+              <CurrencyConverter />
+            </div>
+
           </div>
         </div>
       )}
-      <br></br>
-      <div className="flex flex-row justify-center">
-        <CurrencyConverter />
-      </div>
       <Footer />
     </>
   );
