@@ -4,6 +4,9 @@ export default function HealthcareCard({cityName}){
       <div className=" flex justify-center text-2xl">
         <h1>{cityName} Healthcare</h1>
       </div>
+      <div className=" w-full p-8 ">
+      <img className="w-2/5" src='medicine.svg' />
+      </div>
     </div>
   )
 }
