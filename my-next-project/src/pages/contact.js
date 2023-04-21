@@ -1,18 +1,41 @@
-import { useState } from 'react';
-import Navbar from '../components/NavBar';
-import Head from 'next/head';
+import { useState } from "react";
+import Navbar from "../components/NavBar";
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const Contact = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    let isValid = true;
+
+    if (!email) {
+      setEmailError("Please enter a valid email");
+      isValid = false;
+    } else {
+      setEmailError("");
+    }
+
+    if (!message) {
+      setMessageError("Please write your message");
+      isValid = false;
+    } else {
+      setMessageError("");
+    }
+
+    if (!isValid) {
+      return;
+    }
+
     // Handle form submission logic here, e.g., sending an email
 
     // Reset the form fields
-    setEmail('');
-    setMessage('');
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -28,20 +51,29 @@ const Contact = () => {
           backgroundImage: `url('/map_bg.jpg')`,
         }}
       >
-        <Navbar className={'bg-transparent shadow-none text-3xl'} results={false}/> {/* Add the Navbar component */}
+        <Navbar
+          className={"bg-transparent shadow-none text-3xl"}
+          results={false}
+        />{" "}
+        {/* Add the Navbar component */}
         <div className="max-w-md mx-auto mt-10 pt-6">
           <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
             <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
               Can't find the city you're looking for?
             </h1>
             <div className="max-w-md mx-auto mt-10">
-          <h1 className="glass-shadow text-4xl font-bold text-#2d334a mb-8">Contact Us</h1>
+              <h1 className="glass-shadow text-4xl font-bold text-#2d334a mb-8">
+                Contact Us
+              </h1>
+            </div>
           </div>
-        </div>
-        <br></br>
+          <br></br>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email
               </label>
               <input
@@ -52,9 +84,15 @@ const Contact = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               />
+              {emailError && (
+                <p className="text-red-500 text-xs mt-1">{emailError}</p>
+              )}
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Your Message
               </label>
               <textarea
@@ -65,6 +103,9 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               ></textarea>
+              {messageError && (
+                <p className="text-red-500 text-xs mt-1">{messageError}</p>
+              )}
             </div>
             <div className="pb-4">
               <button
