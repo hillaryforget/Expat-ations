@@ -18,9 +18,9 @@ function findData(city_det, string) {
   return null;
 }
 
-export default function Col_Card(props) {
-  const city_det = findCostOfLiving(props.city_data);
-  const name = props.name;
+export default function Col_Card({ city_data, name }) {
+  const city_det = findCostOfLiving(city_data);
+  // const name = name;
 
   const apples = findData(city_det, "COST-APPLES");
   const bread = findData(city_det, "COST-BREAD");

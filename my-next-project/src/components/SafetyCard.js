@@ -23,13 +23,13 @@ export default function SafetyCard({ cityName, safety }) {
 
   function getData(score) {
     if (score < 0.5) {
-      return { img: "criminal.png", background: "red", text: "Poor" }
+      return { img: "criminal.png", background: "red", text: "Poor", text_style: "text-4xl text-center w-full text-white" }
     }
-    if (score > 0.5 && score < 0.8) {
-      return { img: "policeman.png", background: "yellow", text: "Moderate" }
+    if (score >= 0.5 && score < 0.8) {
+      return { img: "policeman.png", background: "yellow", text: "Moderate", text_style: "text-4xl text-center w-full text-black" }
     }
-    if (score > 0.8) {
-      return { img: "custody.png", background: "green", text: "Excellent" }
+    if (score >= 0.8) {
+      return { img: "custody.png", background: "green", text: "Excellent", text_style: "text-4xl text-center w-full text-white" }
     }
   }
 
@@ -47,7 +47,7 @@ export default function SafetyCard({ cityName, safety }) {
           <div className="w-1/2">
             <br />
             <h1
-              className="text-4xl text-center w-full text-white"
+              className={data.text_style}
               style={{ background: data.background }}
             >
               {data.text}
@@ -59,47 +59,6 @@ export default function SafetyCard({ cityName, safety }) {
             </p>
           </div>
         </div>
-      
-      {/* {score > 0.5 && score <= 0.8 && (
-        <div className=" w-full p-8 flex justify-evenly">
-          <img className="w-2/5" src="policeman.png" />
-          <br />
-          <div className="w-1/2">
-            <br />
-            <h1
-              className="text-4xl text-center w-full text-black"
-              style={{ background: `yellow` }}
-            >
-              Moderate
-            </h1>
-            <br />
-            <p className="text-sm text-center">
-              {" "}
-              *scored {Math.round(score * 100)} out of 100
-            </p>
-          </div>
-        </div>
-      )}
-      {score > 0.8 && (
-        <div className=" w-full p-8 flex justify-evenly">
-          <img className="w-2/5" src="custody.png" />
-          <br />
-          <div className="w-1/2">
-            <br />
-            <h1
-              className="text-4xl text-center w-full text-white"
-              style={{ background: `green` }}
-            >
-              Excellent
-            </h1>
-            <br />
-            <p className="text-sm text-center">
-              {" "}
-              *scored {Math.round(score * 100)} out of 100
-            </p>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 }
