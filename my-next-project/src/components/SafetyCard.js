@@ -76,7 +76,7 @@ export default function SafetyCard({ cityName, safety }) {
               className="text-4xl text-center w-full text-white"
               style={{ background: `green` }}
             >
-              Poor
+              Excellent
             </h1>
             <br />
             <p className="text-sm text-center">
