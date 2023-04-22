@@ -1,11 +1,11 @@
 import React from "react";
-import { useScrollTrigger } from '@mui/material';
+import { useScrollTrigger } from "@mui/material";
 
-const ScrollHandler = props => {
+const ScrollHandler = (props) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    target: props.window ? window() : undefined
+    target: props.window ? window() : undefined,
   });
 
   return React.cloneElement(props.children, {
@@ -14,12 +14,12 @@ const ScrollHandler = props => {
       color: trigger ? "white" : "black",
       transition: trigger ? "0.3s" : "0.5s",
       boxShadow: "none",
-      height: '4rem'
-    }
+      height: "4rem",
+    },
   });
 };
 
-const ScrollToColor = props => {
+const ScrollToColor = (props) => {
   return <ScrollHandler {...props}>{props.children}</ScrollHandler>;
 };
 

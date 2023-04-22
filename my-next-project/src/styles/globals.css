@@ -79,12 +79,12 @@ html {
   margin: 0.5rem;
   padding: 16px 0;
   /* border: none; */
-  border: 1px solid #411b57;
+  border: 1px solid #3B81F6;
   /* color: #ffffff; */
 }
 
 .btnPrimary {
-  background-color: #411b57;
+  background-color: #3B81F6;
   color: white;
   cursor: pointer;
 }
@@ -92,7 +92,7 @@ html {
 .btnOutline {
   /* background-color: #a76a99; */
   background-color: white;
-  color: #411b57;
+  color: #3B81F6;
 }
 
 .bold {

@@ -130,7 +130,6 @@ export default function Main(props) {
         className={"bg-transparent shadow-none text-3xl"}
         results={true}
       />{" "}
-      {/*Add the Navbar component*/}
       {screen === "loading" && <Loading />}
       {screen !== "loading" && (
         <div

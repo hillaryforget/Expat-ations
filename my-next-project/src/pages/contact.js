@@ -31,8 +31,6 @@ const Contact = () => {
       return;
     }
 
-    // Handle form submission logic here, e.g., sending an email
-
     // Reset the form fields
     setEmail("");
     setMessage("");
@@ -55,7 +53,6 @@ const Contact = () => {
           className={"bg-transparent shadow-none text-3xl"}
           results={false}
         />{" "}
-        {/* Add the Navbar component */}
         <div className="max-w-md mx-auto mt-10 pt-6">
           <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
             <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
