@@ -1,35 +1,19 @@
 import * as React from "react";
 import { useState } from "react";
-
-function findCostOfLiving(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "Cost of Living") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findData(city_det, string) {
-  for (let x = 0; x < city_det.length; x++) {
-    if (city_det[x].id === string) {
-      return city_det[x];
-    }
-  }
-  return null;
-}
+import FindCategories from "./helpers/FindCategories";
+import FindData from "./helpers/FindData";
 
 export default function Col_Card({ city_data, name }) {
-  const city_det = findCostOfLiving(city_data);
-  // const name = name;
+  const city_det = FindCategories(city_data, "Cost of Living");
 
-  const apples = findData(city_det, "COST-APPLES");
-  const bread = findData(city_det, "COST-BREAD");
-  const coffee = findData(city_det, "COST-CAPPUCCINO");
-  const movies = findData(city_det, "COST-CINEMA");
-  const gym = findData(city_det, "COST-FITNESS-CLUB");
-  const beer = findData(city_det, "COST-IMPORT-BEER");
-  const lunch = findData(city_det, "COST-RESTAURANT-MEAL");
-  const dinner = findData(city_det, "RESTAURANT-PRICE-INDEX");
+  const apples = FindData(city_det, "COST-APPLES");
+  const bread = FindData(city_det, "COST-BREAD");
+  const coffee = FindData(city_det, "COST-CAPPUCCINO");
+  const movies = FindData(city_det, "COST-CINEMA");
+  const gym = FindData(city_det, "COST-FITNESS-CLUB");
+  const beer = FindData(city_det, "COST-IMPORT-BEER");
+  const lunch = FindData(city_det, "COST-RESTAURANT-MEAL");
+  const dinner = FindData(city_det, "RESTAURANT-PRICE-INDEX");
 
   const [currentIndex, setCurrentIndex] = useState("Groceries");
   const [nextTitle, setNextTitle] = useState("Activities");
@@ -84,17 +68,6 @@ export default function Col_Card({ city_data, name }) {
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col px-5 mb-6">
       <div className="flex flex-row h-full">
-        {/* <div className="w-4/12 h-full">
-          {currentIndex === 'Groceries' &&
-          <img className="w-full h-full" src="groceries.svg" />
-          }
-          {currentIndex === 'Activities' &&
-          <img className="w-full h-full" src="workout.svg" />
-          }
-          {currentIndex === 'Dining Out' &&
-          <img className="w-full h-full" src="restaurant.svg" />
-          }
-        </div> */}
         <div className="w-full flex justify-center pt-8">
           {currentIndex === "Groceries" && (
             <div className="h-full w-full flex flex-col">

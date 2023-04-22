@@ -1,25 +1,25 @@
-function findHealthInfo(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "Healthcare") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findData(city_det, string) {
-  for (let x = 0; x < city_det.length; x++) {
-    if (city_det[x].id === string) {
-      return city_det[x];
-    }
-  }
-  return null;
-}
+import FindCategories from "./helpers/FindCategories";
+import FindData from "./helpers/FindData";
 
 export default function HealthcareCard({ cityName, health }) {
-  const healthData = findHealthInfo(health);
+  const healthData = FindCategories(health, 'Healthcare');
 
-  const healthInfo = findData(healthData, "HEALTHCARE-QUALITY-TELESCORE");
+  const healthInfo = FindData(healthData, "HEALTHCARE-QUALITY-TELESCORE");
   const score = healthInfo.float_value;
+
+  function getData(score) {
+    if (score < 0.5) {
+      return { img: "red_medicine.svg", background: "red", text: "Poor", text_style: "text-4xl text-center w-full text-white" }
+    }
+    if (score >= 0.5 && score < 0.8) {
+      return { img: "yellow_medicine.svg", background: "yellow", text: "Moderate", text_style: "text-4xl text-center w-full text-black" }
+    }
+    if (score >= 0.8) {
+      return { img: "green_medicine.svg", background: "green", text: "Excellent", text_style: "text-4xl text-center w-full text-white" }
+    }
+  }
+
+  const data = getData(score);
 
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-80 w-full flex flex-col pt-10 p-4 mb-6">
@@ -27,33 +27,15 @@ export default function HealthcareCard({ cityName, health }) {
         <h1>{cityName} Healthcare Quality Score</h1>
       </div>
       <div className=" w-full p-8 flex justify-between ">
-        <img className="w-2/5" src="medicine.svg" />
+        <img className="w-2/5" src={data.img} />
         <div className="flex flex-col items-center w-1/2">
           <br />
-          {score <= 0.5 && (
             <h1
-              className="text-4xl text-center w-full text-white"
-              style={{ background: `red` }}
+              className={data.text_style}
+              style={{ background: data.background }}
             >
-              Bad
+              {data.text}
             </h1>
-          )}
-          {score < 0.8 && score > 0.6 && (
-            <h1
-              className="text-4xl text-center w-full text-black"
-              style={{ background: `yellow` }}
-            >
-              Moderate
-            </h1>
-          )}
-          {score >= 0.8 && (
-            <h1
-              className="text-4xl text-center w-full text-white"
-              style={{ background: `green` }}
-            >
-              Excellent
-            </h1>
-          )}
           <br />
           <p> *scored {Math.round(score * 100)} out of 100 </p>
         </div>

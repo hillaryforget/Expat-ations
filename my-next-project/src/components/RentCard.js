@@ -1,28 +1,44 @@
 import * as React from "react";
-
-function findHousing(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "Housing") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findData(city_det, string) {
-  for (let x = 0; x < city_det.length; x++) {
-    if (city_det[x].id === string) {
-      return city_det[x];
-    }
-  }
-  return null;
-}
+import FindCategories from "./helpers/FindCategories";
+import FindData from "./helpers/FindData";
 
 export default function RentCard({ city_data, name }) {
-  const city_det = findHousing(city_data);
+  const city_det = FindCategories(city_data, 'Housing');
+  
+  const smallRent = { 
+    data: FindData(city_det, "APARTMENT-RENT-SMALL"),
+    text: 'A one bedroom, one bath goes for:',
+  };
 
-  const smallRent = findData(city_det, "APARTMENT-RENT-SMALL");
-  const mediumRent = findData(city_det, "APARTMENT-RENT-MEDIUM");
-  const largeRent = findData(city_det, "APARTMENT-RENT-LARGE");
+  const mediumRent = { 
+    data: FindData(city_det, "APARTMENT-RENT-MEDIUM"),
+    text: 'A two bedroom, two bath goes for:',
+  };
+
+  const largeRent = { 
+    data: FindData(city_det, "APARTMENT-RENT-LARGE"),
+    text: 'A three bedroom, two bath goes for:',
+  };
+
+  function nullCheck(rent) {
+    if (rent.data !== null) {
+      const cost = rent.data.currency_dollar_value
+      return (
+        <div>
+          <p className="text-md">{rent.text}</p>
+          <div className=" flex justify-center text-xl">
+            <b>${cost}/month</b>
+          </div>
+        </div>
+      )
+    }
+    console.log('THIS IS THE LABEL: ', rent.data);
+    return (
+      <div>
+        <p className="text-md">Data not found</p>
+      </div>
+    )
+  }
 
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-96 w-full flex flex-col p-4 mb-6">
@@ -31,30 +47,9 @@ export default function RentCard({ city_data, name }) {
       </div>
       <div className="flex">
         <div className="w-1/2 h-full flex flex-col justify-between mt-10 pl-3">
-          {smallRent !== null && (
-            <div>
-              <p className="text-md">A one bedroom, one bath goes for:</p>
-              <div className=" flex justify-center text-xl">
-                <b>${Object.values(smallRent)[0].toFixed(2)}/month</b>
-              </div>
-            </div>
-          )}
-          {mediumRent !== null && (
-            <div>
-              <p className="text-md">A two bedroom, two bath goes for:</p>
-              <div className=" flex justify-center text-xl">
-                <b>${Object.values(mediumRent)[0].toFixed(2)}/month</b>
-              </div>
-            </div>
-          )}
-          {largeRent !== null && (
-            <div>
-              <p className="text-md">A three bedroom, two bath goes for:</p>
-              <div className=" flex justify-center text-xl">
-                <b>${Object.values(largeRent)[0].toFixed(2)}/month</b>
-              </div>
-            </div>
-          )}
+          {nullCheck(smallRent)}
+          {nullCheck(mediumRent)}
+          {nullCheck(largeRent)}
         </div>
         <div className="w-1/2 h-full">
           <div className="h-full w-full mt-6">

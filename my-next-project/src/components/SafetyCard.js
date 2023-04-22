@@ -1,24 +1,10 @@
-function findSafetyInfo(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "Safety") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findData(city_det, string) {
-  for (let x = 0; x < city_det.length; x++) {
-    if (city_det[x].id === string) {
-      return city_det[x];
-    }
-  }
-  return null;
-}
+import FindCategories from "./helpers/FindCategories";
+import FindData from "./helpers/FindData";
 
 export default function SafetyCard({ cityName, safety }) {
-  const safetyData = findSafetyInfo(safety);
+  const safetyData = FindCategories(safety, "Safety");
 
-  const healthInfo = findData(safetyData, "CRIME-RATE-TELESCORE");
+  const healthInfo = FindData(safetyData, "CRIME-RATE-TELESCORE");
   const score = healthInfo.float_value;
 
   function getData(score) {

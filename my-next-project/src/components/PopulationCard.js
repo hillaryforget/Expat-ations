@@ -1,36 +1,14 @@
-function findAge(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "Internal application use") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findPopulation(prop) {
-  for (let x = 0; x < prop.length; x++) {
-    if (prop[x].label === "City Size") {
-      return prop[x].data;
-    }
-  }
-}
-
-function findData(city_det, string) {
-  for (let x = 0; x < city_det.length; x++) {
-    if (city_det[x].id === string) {
-      return city_det[x];
-    }
-  }
-  return null;
-}
+import FindCategories from "./helpers/FindCategories";
+import FindData from "./helpers/FindData";
 
 export default function PopulationCard({ cityName, population }) {
-  const age = findAge(population);
-  const populationInfo = findPopulation(population);
+  const age = FindCategories(population, "Internal application use");
+  const populationInfo = FindCategories(population, "City Size");
 
-  const elderlyPeople = findData(age, "ELDERLY-PEOPLE");
-  const lifeExpectancy = findData(age, "LIFE-EXPECTANCY");
-  const medianAge = findData(age, "MEDIAN-AGE");
-  const populationSize = findData(populationInfo, "POPULATION-SIZE");
+  const elderlyPeople = FindData(age, "ELDERLY-PEOPLE");
+  const lifeExpectancy = FindData(age, "LIFE-EXPECTANCY");
+  const medianAge = FindData(age, "MEDIAN-AGE");
+  const populationSize = FindData(populationInfo, "POPULATION-SIZE");
 
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-80 w-full flex flex-col pt-6 p-4 mb-6">
