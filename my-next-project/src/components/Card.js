@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export default function Card(props) {
-  const [name, image, summary] = [props.name, props.image, props.summary];
+  const {name, image, summary} = props;
 
   return (
     <div className="rounded-xl shadow-lg bg-[#fffffe] h-[29rem] w-full mt-16 mb-6">
