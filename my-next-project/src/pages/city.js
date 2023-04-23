@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Heading2 from "../components/Heading2";
 import Footer from "../components/Footer";
+import AppHead from "../components/AppHead";
 
 export async function getStaticProps() {
   const cities = [];
@@ -98,16 +99,7 @@ export default function Home({ city_list }) {
 
   return (
     <>
-      <Head>
-        <title>Expat-ations</title>
-        <meta name="description" content="Cities" />
-        <link rel="icon" href="/location.svg" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-          src="https://kit.fontawesome.com/c3b30720d4.js"
-          crossorigin="anonymous"
-        ></script>
-      </Head>
+    <AppHead title="Expat-ations" />
       <div
         className="min-h-screen bg-fixed bg-center bg-cover"
         style={{

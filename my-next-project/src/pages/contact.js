@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/NavBar";
-import Head from "next/head";
+import AppHead from "../components/AppHead";
 import Footer from "../components/Footer";
 
 const Contact = () => {
@@ -38,11 +38,7 @@ const Contact = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact - Expat-ations</title>
-        <meta name="description" content="Contact Expat-ations" />
-        <script src="https://cdn.tailwindcss.com"></script>
-      </Head>
+    <AppHead title="Contact - Expat-ations"/>
       <div
         className="min-h-screen bg-fixed bg-center bg-cover"
         style={{

@@ -2,16 +2,12 @@ import Head from "next/head";
 import Script from "next/script";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+import AppHead from "../components/AppHead";
 
 const About = () => {
   return (
     <>
-      <Head>
-        <title>About - Expat-ations</title>
-        <meta name="description" content="About Expat-ations" />
-        <link rel="icon" href="/plane-solid.svg" />
-        <script src="https://cdn.tailwindcss.com"></script>
-      </Head>
+      <AppHead title="About - Expat-ations"/>
       <div
         className="min-h-screen bg-fixed bg-center bg-cover"
         style={{
