@@ -1,7 +1,9 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-    <div>
-    <img src="https://raw.githubusercontent.com/hillaryforget/Expat-ations/main/my-next-project/public/Expat-ations%20(2).png" style="display:block" />
+    <di style="display:flex">
+    <div style="margin:auto">
+      <img src="https://raw.githubusercontent.com/hillaryforget/Expat-ations/main/my-next-project/public/Expat-ations%20(2).png" style="display:block" />  
+    </div>
     </div>
     
     Find your ideal city tailored to your preferences. Effortlessly compare 266+ cities worldwide, evaluating factors such as cost of living, quality of life, safety, healthcare, and more. If you're uncertain about your destination, let us guide you with personalized suggestions that align with your priorities. Know what to expect with Expat-ations.
