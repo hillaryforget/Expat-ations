@@ -1,7 +1,6 @@
 <!-- PROJECT LOGO -->
-  ![Logo](/my-next-project/public/Expat-ations%20(2).png)
-
-  <p align="center">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/hillaryforget/Expat-ations/main/my-next-project/public/Expat-ations%20(2).png" />
     Find your ideal city tailored to your preferences. Effortlessly compare 266+ cities worldwide, evaluating factors such as cost of living, quality of life, safety, healthcare, and more. If you're uncertain about your destination, let us guide you with personalized suggestions that align with your priorities. Know what to expect with Expat-ations.
     <br />
     <a href="https://github.com/hillaryforget/Expat-ations"><strong>Explore the docs »</strong></a>
