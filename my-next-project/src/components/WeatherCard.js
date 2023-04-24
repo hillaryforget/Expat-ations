@@ -131,7 +131,7 @@ export default function WeatherCard({ cityName, climate }) {
         <div className="flex justify-center">
           <br />
           <button
-            className="text-center text-2xl rounded-xl w-full"
+            className="text-center text-2xl rounded-xl w-11/12 hover:shadow-lg hover:scale-110"
             style={{ background: `#ffd803` }}
             onClick={() => nextSlide(currentIndex)}
           >

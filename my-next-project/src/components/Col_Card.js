@@ -187,10 +187,10 @@ export default function Col_Card({ city_data, name }) {
         </div>
       </div>
       <div className="flex flex-row h-1/6 w-full text-2xl items-center justify-between opacity-0 hover:opacity-100">
-        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300]">
+        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300] hover:shadow-lg hover:scale-110">
           <button onClick={() => prevSlide(currentIndex)}>{prevTitle}</button>
         </div>
-        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300]">
+        <div className="bg-[#ffd803] rounded-xl w-1/4 text-center border-2 border-[#e6c300] hover:shadow-lg hover:scale-110">
           <button onClick={() => nextSlide(currentIndex)}>{nextTitle}</button>
         </div>
       </div>
