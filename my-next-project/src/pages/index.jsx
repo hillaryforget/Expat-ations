@@ -41,14 +41,14 @@ export default function Home({ city_list }) {
       >
         <div className="flex m-auto">
           <div className=" p-3">
-            <h1 className="text-5xl font-bold mb-5 text-center">
+            <h1 className="text-5xl font-bold mb-5 text-center text-[#2D334A]">
               Where will you go?
             </h1>
-            <p className="pb-5 text-xl text-center">
+            <p className="pb-5 text-xl text-center text-[#2D334A]">
               Select the cities you want to compare to gain more insight on your
               next destination.
             </p>
-            <p className="pb-5 text-xl text-center">
+            <p className="pb-5 text-xl text-center text-[#2D334A]">
               Not sure what city is for you? Explore to view suggested cities
               based on your needs.
             </p>

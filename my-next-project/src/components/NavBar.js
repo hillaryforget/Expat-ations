@@ -18,7 +18,20 @@ import Link from "next/link";
 import ScrollToColor from "../components/ScrollToColor";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = [
+  {
+    title: "Home",
+    url:"/"
+  }, 
+  {
+    title: "About",
+    url:"/about"
+  }, 
+  {
+    title: "Contact",
+    url:"/contact"
+  }
+];
 
 function NavBar(props) {
   const { window } = props;
@@ -36,9 +49,9 @@ function NavBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding className="text-3xl">
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.title} disablePadding className="text-3xl">
+            <ListItemButton sx={{ textAlign: "center" }} href={item.url}>
+              <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -83,11 +96,11 @@ function NavBar(props) {
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
                 {navItems.map((item) => (
                   <Link
-                    key={item}
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    key={item.title}
+                    href={item.title === "Home" ? "/" : `/${item.title.toLowerCase()}`}
                     passHref
                   >
-                    <Button sx={{ color: "#ffd803" }}>{item}</Button>
+                    <Button sx={{ color: "#ffd803" }}>{item.title}</Button>
                   </Link>
                 ))}
               </Box>
@@ -125,11 +138,11 @@ function NavBar(props) {
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Link
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  key={item.title}
+                  href={item.title === "Home" ? "/" : `/${item.title.toLowerCase()}`}
                   passHref
                 >
-                  <Button sx={{ color: "#ffd803" }}>{item}</Button>
+                  <Button sx={{ color: "#ffd803" }}>{item.title}</Button>
                 </Link>
               ))}
             </Box>

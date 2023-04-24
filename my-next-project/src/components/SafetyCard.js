@@ -5,7 +5,7 @@ export default function SafetyCard({ cityName, safety }) {
   const safetyData = FindCategories(safety, "Safety");
 
   const healthInfo = FindData(safetyData, "CRIME-RATE-TELESCORE");
-  const score = healthInfo.float_value;
+  const score = healthInfo?.float_value || 0;
 
   function getData(score) {
     if (score < 0.5) {

@@ -50,10 +50,12 @@ const Contact = () => {
           results={false}
         />{" "}
         <div className="max-w-md mx-auto mt-10 pt-6">
-          <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
-            <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
-              Can't find the city you're looking for?
-            </h1>
+          <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md ">
+            <div className="flex">
+              <p className="inline text-center align-center justify-center glass-shadow mx-auto text-4xl font-bold text-#2d334a mt-6">
+                Can't find the city you're looking for?
+              </p>
+            </div>
             <div className="max-w-md mx-auto mt-10">
               <h1 className="glass-shadow text-4xl font-bold text-#2d334a mb-8">
                 Contact Us

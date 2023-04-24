@@ -27,7 +27,7 @@ export async function getStaticProps() {
   };
 }
 
-function SimpleContainer(props) {
+function div(props) {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -110,8 +110,8 @@ export default function Home({ city_list }) {
           className={"bg-transparent shadow-none text-3xl"}
           results={true}
         />{" "}
-        <div className="flex flex-row">
-          <SimpleContainer>
+        <div className="flex flex-col lg:flex-row container mx-auto">
+          <div className="flex-1">
             <main className={styles.main}>
               <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
                 <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
@@ -175,21 +175,8 @@ export default function Home({ city_list }) {
                 </button>
               </form>
             </main>
-          </SimpleContainer>
-          <SimpleContainer>
-            <main className={styles.main}>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <FontAwesomeIcon icon={faArrowRight} beat size="2xl" />
-            </main>
-          </SimpleContainer>
-          <SimpleContainer>
+          </div>
+          <div className="flex-1">
             <main className={styles.main}>
               <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
                 <h1 className="glass-shadow text-4xl font-bold text-#2d334a mt-6">
@@ -198,7 +185,7 @@ export default function Home({ city_list }) {
               </div>
               <Heading2 cities={city_list} />
             </main>
-          </SimpleContainer>
+          </div>
         </div>
         <Modal
           open={openModal}

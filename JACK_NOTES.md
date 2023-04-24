@@ -1,22 +1,14 @@
-- my-next-project sounds like a default name. Something more intentional, even if's just "app" is better
-- adding an ERD (entity relationship diagram) might be good
-
 __Design Review__
-- Cute!!!!!
-- Using both MUI and tailwind is a bit awkward
 - Less color heavy theming is generally safer
 - http://localhost:3000/city is a bit asymmetrical
-- Logo is cute!!!
-- http://localhost:3000/main?city1=Amsterdam&city2=Anchorage the images in the aspect ratio for the two top cards is not good
+- http://localhost:3000/main?city1=Amsterdam&city2=Anchorage the images in the aspect ratio for the two top cards is too wide
 - Seeing the same images side by side when comparing two cities creates repetition
 - I find the white background of the cards a bit overpowering on the city compare page
-- The icons are cute!!!!
 - Consider combining the side-by-sides into one card and introducing a divider inside of the combined card
 - At some device widths, the text overflows past the yellow boxes for the "highlights"
 - Adding some hover and focus effects for the yellow buttons would be good
-- You could spice up the experience of scrolling through using something like https://scroll revealjs.org/ 
+- You could spice up the experience of scrolling through using something like https://scrollrevealjs.org
 - Maybe pick a custom font. ChatGPT is pretty good at picking these if you describe the purpose of your app. Makes a big difference visually. Ask chat to create a tailwind.config.js file for you
-- Consider using your names in the footer to link to Github/Linkedin (shameless self-promotion <3)
 - Consider using emojis in your copywriting to give it a fun vibe 
 
 __Code Review__
@@ -31,7 +23,6 @@ __Code Review__
 - Most of the code is pretty clean. I like how you did the interface for fetching from OpenAI
 
 __Usability Review__
-- Mobile slideout menu links dont work
 - City page is broken on mobile
 - About page is tough to read on mobile
 - Got an error when searching Andorra + Anchorage (access healthInfo when healthInfo is null)

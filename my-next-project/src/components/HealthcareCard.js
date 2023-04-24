@@ -5,7 +5,7 @@ export default function HealthcareCard({ cityName, health }) {
   const healthData = FindCategories(health, 'Healthcare');
 
   const healthInfo = FindData(healthData, "HEALTHCARE-QUALITY-TELESCORE");
-  const score = healthInfo.float_value;
+  const score = healthInfo?.float_value || 0;
 
   function getData(score) {
     if (score < 0.5) {
