@@ -53,7 +53,7 @@ const Contact = () => {
           <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md ">
             <div className="flex">
               <p className="inline text-center align-center justify-center glass-shadow mx-auto text-4xl font-bold text-#2d334a mt-6">
-                Can't find the city you're looking for?
+                Can&apos;t find the city you&apos;re looking for?
               </p>
             </div>
             <div className="max-w-md mx-auto mt-10">

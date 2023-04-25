@@ -78,7 +78,7 @@ function NavBar(props) {
               >
                 <MenuIcon />
               </IconButton>
-              <a
+              <Link
                 href="/"
                 style={{
                   flexGrow: "1",
@@ -91,7 +91,7 @@ function NavBar(props) {
                 >
                   Expat-ations
                 </Typography>
-              </a>
+              </Link>
 
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
                 {navItems.map((item) => (
@@ -120,7 +120,7 @@ function NavBar(props) {
             >
               <MenuIcon />
             </IconButton>
-            <a
+            <Link
               href="/"
               style={{
                 flexGrow: "1",
@@ -133,7 +133,7 @@ function NavBar(props) {
               >
                 Expat-ations
               </Typography>
-            </a>
+            </Link>
 
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (

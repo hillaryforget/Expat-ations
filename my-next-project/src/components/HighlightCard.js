@@ -27,6 +27,7 @@ export default function HiglightCard({ city, cityName }) {
           {printResult.map((el) => (
             <ul
               className="text-center text-2xl"
+              key={el.toString()}
               style={{ background: `#ffd803` }}
             >
               {el}
