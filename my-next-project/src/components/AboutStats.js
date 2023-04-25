@@ -5,7 +5,7 @@ const stats = [
   { name: "Paid time off", value: "Unlimited" },
 ];
 
-export default function () {
+export default function AboutStats() {
   return (
     <div className="relative isolate overflow-hidden bg-gradient-to-b from-[#E2F5F4] via-[#272343] to-[#E2F5F4]">
       <div className="py-36 mx-auto max-w-4xl px-6 lg:px-8">
