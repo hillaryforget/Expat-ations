@@ -18,7 +18,7 @@ const About = () => {
         <Navbar
           className={"bg-transparent shadow-none text-3xl"}
           results={false}
-        />{" "}
+        />
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
           <div className="space-y-2 font-display text-2xl tracking-tight text-blue-900">
             <div className="bg-opacity-50 bg-#e3f6f5 p-4 rounded-md">
@@ -53,10 +53,10 @@ const About = () => {
                   <RevealWrapper>
                   <p>
                     Discovering the perfect destination for your next adventure
-                    or big move can be challenging, and that's where
+                    or big move can be challenging, and that&apos;s where
                     Expat-ations comes in. We are passionate about helping you
                     find the city that matches your desires and priorities,
-                    whether you're dreaming of basking in the sun by the beach,
+                    whether you&apos;re dreaming of basking in the sun by the beach,
                     cutting living expenses, or immersing yourself in a vibrant
                     startup scene.
                   </p>
@@ -64,10 +64,10 @@ const About = () => {
                   <br></br>
                   <RevealWrapper>
                   <p style={{ color: "#272343" }}>
-                    At Expat-ations, we understand that each individual's
+                    At Expat-ations, we understand that each individual&apos;s
                     journey is unique, and our mission is to make your
                     decision-making process as smooth and enjoyable as possible.
-                    By selecting your current city and the one you're
+                    By selecting your current city and the one you&apos;re
                     considering relocating to, our cutting-edge platform will
                     provide you with comprehensive data and insights on various
                     aspects of urban life.
@@ -91,8 +91,8 @@ const About = () => {
                     At Expat-ations, we believe in the power of personalization
                     and are committed to ensuring that you feel supported every
                     step of the way. Our team consists of real people with
-                    diverse experiences and backgrounds, and we're excited to
-                    share our knowledge with you. Together, let's embark on this
+                    diverse experiences and backgrounds, and we&apos;re excited to
+                    share our knowledge with you. Together, let&apos;s embark on this
                     thrilling journey and find the perfect city to pave the way
                     for a fulfilling, joyful, and prosperous future!
                   </p>
