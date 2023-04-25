@@ -33,17 +33,17 @@ export default function StickyFooter() {
             name="Clayton"
             githubProfileUrl="https://github.com"
           />
-          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', fontSize:'1.25rem', margin:'0 1rem'}} />
+          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', maxWidth:'1rem', display:'inline', fontSize:'1.25rem', margin:'0 1rem'}} />
           <Contributor 
             name="Joon"
             githubProfileUrl="https://github.com"
           />
-          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', fontSize:'1.25rem', margin:'0 1rem'}} />
+          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', maxWidth:'1rem', display:'inline', fontSize:'1.25rem', margin:'0 1rem'}} />
           <Contributor 
             name="Hillary"
             githubProfileUrl="https://github.com"
           />
-          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', fontSize:'1.25rem', margin:'0 1rem'}} />
+          <FontAwesomeIcon icon={faEarthOceania} style={{backgroundColor:'darkgreen',borderRadius:'100%', color:'skyblue', maxWidth:'1rem', display:'inline', fontSize:'1.25rem', margin:'0 1rem'}} />
           <Contributor 
             name="Christian"
             githubProfileUrl="https://github.com"

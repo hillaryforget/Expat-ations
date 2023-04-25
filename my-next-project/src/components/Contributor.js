@@ -1,4 +1,4 @@
-export default function Contributor(props) {
+export default function  Contributor(props) {
 
   const {
     name,
