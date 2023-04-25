@@ -70,6 +70,12 @@ html {
   padding: 1rem 2rem;
 }
 
+select {
+  min-width:100px;
+  padding:0.5rem 1rem!important;
+  border-radius: 6px;
+}
+
 .btnContainer {
   display: flex;
   padding: 1rem 1rem;

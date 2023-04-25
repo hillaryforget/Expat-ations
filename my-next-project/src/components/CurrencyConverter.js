@@ -50,23 +50,26 @@ export default function CurrencyConverter() {
   };
 
   return (
-    <Container>
-      <Input
-        type="number"
-        value={amount}
-        onChange={handleAmountChange}
-        min="1"
-        step="any"
-        className="inline-block border border-gray-500 px-4 py-2 rounded-md"
-      />
-      <Select value={baseCurrency} onChange={handleBaseCurrencyChange}>
-        {currencies.map((currency) => (
-          <option key={currency} value={currency}>
-            {currency}
-          </option>
-        ))}
-      </Select>
+    <Container className="flex flex-col lg:flex-row">
+      <div className="p-3">
+        <Input
+          type="number"
+          value={amount}
+          onChange={handleAmountChange}
+          min="1"
+          step="any"
+          className="inline-block border border-gray-500 px-4 py-2 rounded-md"
+        />
+        <Select value={baseCurrency} onChange={handleBaseCurrencyChange}>
+          {currencies.map((currency) => (
+            <option key={currency} value={currency}>
+              {currency}
+            </option>
+          ))}
+        </Select>
+      </div>
       <Equals>=</Equals>
+      <div className="p-3">
       <Input
         type="number"
         value={conversionRate ? amount * conversionRate : ""}
@@ -80,6 +83,8 @@ export default function CurrencyConverter() {
           </option>
         ))}
       </Select>
+      </div>
+
       <Button onClick={convertCurrency}>Convert</Button>
     </Container>
   );

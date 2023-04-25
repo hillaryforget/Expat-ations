@@ -19,9 +19,6 @@ export default function StickyFooter() {
         mt: "auto",
         backgroundColor: "#e3f6f5",
       }}
-      // theme.palette.mode === 'light'
-      //   ? theme.palette.grey[200]
-      //   : theme.palette.grey[800],
     >
       <Container maxWidth="sm">
         <Typography variant="body1" className="text-center">
