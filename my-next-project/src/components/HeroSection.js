@@ -21,7 +21,7 @@ export default function HeroSection() {
           <p className="glass-shadow inline text-sm lg:text-xl text-center">
             Find your ideal city tailored to your preferences. Effortlessly
             compare 266+ cities worldwide, evaluating factors such as cost of
-            living, quality of life, safety, healthcare, and more. If you're
+            living, quality of life, safety, healthcare, and more. If you&apos;re
             uncertain about your destination, let us guide you with personalized
             suggestions that align with your priorities. Know what to expect
             with Expat-ations.
