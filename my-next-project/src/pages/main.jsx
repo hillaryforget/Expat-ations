@@ -16,6 +16,7 @@ import PopulationCard from '../components/PopulationCard';
 import SafetyCard from '../components/SafetyCard';
 import CurrencyConverter from '../components/CurrencyConverter';
 import Map from "../components/map";
+import { RevealWrapper } from 'next-reveal';
 
 export async function getServerSideProps(context) {
   let query_one = context.query.city1.replace(/[,.]/g, "").toLowerCase();
@@ -141,6 +142,7 @@ export default function Main(props) {
           <div className="w-full">
             <div className="pt-6">
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <Card
                   name={city_one.full_name}
@@ -153,12 +155,16 @@ export default function Main(props) {
                   summary={city_two_score.summary}
                 />
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <HighlightCard city={city_one_score} cityName={city_one_name} />
                 <HighlightCard city={city_two_score} cityName={city_two_name} />
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <WeatherCard 
                   cityName={props.city_one_name}
@@ -169,7 +175,9 @@ export default function Main(props) {
                   climate={props.city_two_det.categories}
                 />                 
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <TransportationCard 
                   cityName={props.city_one_name}
@@ -180,7 +188,9 @@ export default function Main(props) {
                   transportation={props.city_two_det.categories}
                 />                 
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <HealthcareCard
                   cityName={props.city_one_name}
@@ -191,7 +201,9 @@ export default function Main(props) {
                   health={props.city_two_det.categories}
                 />                 
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <PopulationCard
                   cityName={props.city_one_name}
@@ -202,7 +214,9 @@ export default function Main(props) {
                   population={props.city_two_det.categories}
                 />                 
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <SafetyCard
                   cityName={props.city_one_name}
@@ -213,16 +227,21 @@ export default function Main(props) {
                   safety={props.city_two_det.categories}
                 />                 
               </div>
+              </RevealWrapper>
   
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <RentCard city_data={city_one_det.categories} name={city_one_name} />
                 <RentCard city_data={city_two_det.categories} name={city_two_name}/>
               </div>
+              </RevealWrapper>
 
+              <RevealWrapper>
               <div className="flex flex-row gap-4 justify-center px-4 max-w-7xl mx-auto">
                 <ColCard city_data={city_one_det.categories} name={city_one_name} />
                 <ColCard city_data={city_two_det.categories} name={city_two_name}/>
               </div>
+              </RevealWrapper>
             </div>
 
             <div className="mx-4">

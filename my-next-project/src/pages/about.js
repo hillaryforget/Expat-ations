@@ -3,6 +3,7 @@ import Script from "next/script";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import AppHead from "../components/AppHead";
+import { RevealWrapper } from 'next-reveal';
 
 const About = () => {
   return (
@@ -49,6 +50,7 @@ const About = () => {
                     color: "#272343",
                   }}
                 >
+                  <RevealWrapper>
                   <p>
                     Discovering the perfect destination for your next adventure
                     or big move can be challenging, and that's where
@@ -58,7 +60,9 @@ const About = () => {
                     cutting living expenses, or immersing yourself in a vibrant
                     startup scene.
                   </p>
+                  </RevealWrapper>
                   <br></br>
+                  <RevealWrapper>
                   <p style={{ color: "#272343" }}>
                     At Expat-ations, we understand that each individual's
                     journey is unique, and our mission is to make your
@@ -68,7 +72,9 @@ const About = () => {
                     provide you with comprehensive data and insights on various
                     aspects of urban life.
                   </p>
+                  </RevealWrapper>
                   <br></br>
+                  <RevealWrapper>
                   <p style={{ color: "#272343" }}>
                     Our user-friendly interface presents side-by-side
                     comparisons, allowing you to easily evaluate factors such as
@@ -78,7 +84,9 @@ const About = () => {
                     layouts, we make the process not only informative but also
                     engaging and fun.
                   </p>
+                  </RevealWrapper>
                   <br></br>
+                  <RevealWrapper>
                   <p style={{ color: "#272343" }}>
                     At Expat-ations, we believe in the power of personalization
                     and are committed to ensuring that you feel supported every
@@ -88,6 +96,7 @@ const About = () => {
                     thrilling journey and find the perfect city to pave the way
                     for a fulfilling, joyful, and prosperous future!
                   </p>
+                  </RevealWrapper>
                 </div>
               </div>
             </div>
