@@ -56,19 +56,16 @@ Expat-ations was created by Lighthouse Labs Web Dev students **Hillary Forget, J
 <!-- GETTING STARTED -->
 ## Deployment
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Use this link to visit Expat-ations: https://expat-ations.vercel.app/
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+!["Home Page"](my-next-project/public/ExpatHomePage.gif)
+!["Main Page"](my-next-project/public/CityMainPage.gif)
+!["Explore Page"](my-next-project/public/ExpatExploreCity.gif)
+!["About Page"](my-next-project/public/About.png)
+!["Contact Page"](my-next-project/public/Contact.png)
 
 <!-- CONTACT -->
 ## Contact
