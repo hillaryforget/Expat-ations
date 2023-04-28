@@ -1,7 +1,6 @@
 import AutoComplete from "./SearchField";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 function showState(propOne, propTwo) {
   console.log(propOne);

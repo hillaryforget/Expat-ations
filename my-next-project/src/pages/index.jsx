@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import CurrencyConverter from "../components/CurrencyConverter";
-import AppHead from "../components/AppHead"
+import AppHead from "../components/AppHead";
 
 export async function getStaticProps() {
   const cities = [];

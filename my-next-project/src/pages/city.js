@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useState } from "react";
 import styles from "src/styles/index.module.css";
 import * as React from "react";
@@ -10,7 +9,6 @@ import Modal from "../components/Modal";
 import Heading2 from "../components/Heading2";
 import Footer from "../components/Footer";
 import AppHead from "../components/AppHead";
-import { OpenAIApi } from "openai";
 
 export async function getStaticProps() {
   const cities = [];
